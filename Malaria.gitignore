@@ -1,1 +1,33 @@
-joiohihi
+clear all; close all;
+
+% PREPROCESAMIENTO DE IMAGENES DE SANGRE
+
+% Procesamiento inicial de imagen de Plasmodium Falciparum
+IPF = imread('PF.jpg');
+imshow(IPF)
+title('Imagen original PF');
+IPF_gray = rgb2gray(IPF); % En escala de grises
+IPF_eq = adapthisteq(IPF_gray); % Mejorar el contraste
+IPF_filt = medfilt2(IPF_eq, [3 3]); % Filtrar los ruidos
+imshow(IPF_filt)
+title('Imagen filtrada en escala de grises PF');
+
+% Procesamiento inicial de imagen de Plasmodium Vivax
+IPV = imread('PV.jpg');
+imshow(IPV)
+title('Imagen original PV');
+IPV_gray = rgb2gray(IPV); 
+IPV_eq = adapthisteq(IPV_gray);
+IPV_filt = medfilt2(IPV_eq, [3 3]);
+imshow(IPV_filt)
+title('Imagen filtrada en escala de grises PV');
+
+% Procesamiento inicial de imagen no infectada
+IClean = imread('NoInfectado.tiff');
+imshow(IClean)
+title('Imagen original No Infectado');
+IClean_gray = rgb2gray(IClean);
+IClean_eq = adapthisteq(IClean_gray);
+Iclean_filt = medfilt2(IClean_eq, [3 3]);
+imshow(Iclean_filt)
+title('Imagen filtrada en escala de grises No Infectado');
