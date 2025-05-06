@@ -1,33 +1,243 @@
-clear all; close all;
+clear; close all; clc;
 
-% PREPROCESAMIENTO DE IMAGENES DE SANGRE
+% --- Cambia solo estos nombres ---
+image_filename = 'PF-20171023_110309.jpg';
+txt_filename = 'PF-20171023_110309.txt';
+% ---------------------------------
 
-% Procesamiento inicial de imagen de Plasmodium Falciparum
-IPF = imread('PF.jpg');
+% Leer la imagen
+img = imread(image_filename);
+
+% Leer todas las líneas del archivo de texto
+fileID = fopen(txt_filename, 'r');
+lines = textscan(fileID, '%s', 'Delimiter', '\n');
+fclose(fileID);
+lines = lines{1};
+
+% Eliminar la primera línea (no contiene datos relevantes)
+lines(1) = [];
+
+% Preparar estructuras para los datos
+numLines = length(lines);
+data = cell(numLines, 7);  % Solo 7 columnas para la tabla
+x2 = NaN(numLines, 1);     % X2 para círculos
+y2 = NaN(numLines, 1);     % Y2 para círculos
+
+% Procesar cada línea
+for i = 1:numLines
+    tokens = strsplit(lines{i}, ',');
+    % Llenar columnas fijas
+    for j = 1:7
+        if j <= length(tokens)
+            data{i, j} = tokens{j};
+        else
+            data{i, j} = '';
+        end
+    end
+    % Leer X2/Y2 si existen
+    if length(tokens) >= 9
+        x2(i) = str2double(tokens{8});
+        y2(i) = str2double(tokens{9});
+    end
+end
+
+% Convertir a tabla con solo 7 columnas
+dataTable = cell2table(data, ...
+    'VariableNames', {'ID', 'Label', 'Comment', 'Shape', 'NumPoints', 'X1', 'Y1'});
+
+% Convertir columnas numéricas
+dataTable.NumPoints = str2double(dataTable.NumPoints);
+dataTable.X1 = str2double(dataTable.X1);
+dataTable.Y1 = str2double(dataTable.Y1);
+
+% Mostrar cantidad de cada tipo
+parasites = strcmpi(dataTable.Label, 'Parasite') | strcmpi(dataTable.Label, 'Parasitized');
+white_cells = strcmpi(dataTable.Label, 'White_Blood_Cell');
+
+fprintf('Número de parásitos: %d\n', sum(parasites));
+fprintf('Número de glóbulos blancos: %d\n', sum(white_cells));
+
+% Mostrar imagen
+figure;
+imshow(img);
+hold on;
+
+% Dibujar los elementos
+for i = 1:height(dataTable)
+    shape = lower(dataTable.Shape{i});
+    x1 = dataTable.X1(i); y1 = dataTable.Y1(i);
+
+    if strcmp(shape, 'circle') && all(~isnan([x2(i), y2(i)]))
+        c = ([x1, y1] + [x2(i), y2(i)]) / 2;
+        r = norm([x2(i)-x1, y2(i)-y1]) / 2;
+        viscircles(c, r, 'Color', 'r');
+    elseif strcmp(shape, 'point')
+        plot(x1, y1, 'y+', 'MarkerSize', 8, 'LineWidth', 1.5);
+    end
+end
+
+hold off;
+title('Anotaciones en la imagen');
+
+IPF = imread('PF-20171023_110309.jpg');
 imshow(IPF)
 title('Imagen original PF');
-IPF_gray = rgb2gray(IPF); % En escala de grises
-IPF_eq = adapthisteq(IPF_gray); % Mejorar el contraste
-IPF_filt = medfilt2(IPF_eq, [3 3]); % Filtrar los ruidos
-imshow(IPF_filt)
-title('Imagen filtrada en escala de grises PF');
 
-% Procesamiento inicial de imagen de Plasmodium Vivax
-IPV = imread('PV.jpg');
-imshow(IPV)
-title('Imagen original PV');
-IPV_gray = rgb2gray(IPV); 
-IPV_eq = adapthisteq(IPV_gray);
-IPV_filt = medfilt2(IPV_eq, [3 3]);
-imshow(IPV_filt)
-title('Imagen filtrada en escala de grises PV');
+% Quitar el ruido gaussiano
+IPF_gauss_filt=imgaussfilt(IPF,2,'FilterSize',5);
 
-% Procesamiento inicial de imagen no infectada
-IClean = imread('NoInfectado.tiff');
-imshow(IClean)
-title('Imagen original No Infectado');
-IClean_gray = rgb2gray(IClean);
-IClean_eq = adapthisteq(IClean_gray);
-Iclean_filt = medfilt2(IClean_eq, [3 3]);
-imshow(Iclean_filt)
-title('Imagen filtrada en escala de grises No Infectado');
+% Quitar el ruido salt&pepper
+IPF_salt_pepper_filt=zeros(size(IPF_gauss_filt), 'uint8');
+
+    for k = 1:3
+        IPF_salt_pepper_filt(:,:,k) = medfilt2(IPF_gauss_filt(:,:,k), [3 3]);
+    end
+
+Imagen_FILT = im2double(IPF_salt_pepper_filt);
+Imagen_FILT(Imagen_FILT==0)=eps;
+imshow(Imagen_FILT); title('Imagen Filtrada')
+
+% Convertir a OD (densidad óptica)
+IPF_double = im2double(IPF);
+OD = -log(IPF_double + 0.01);
+OD = reshape(OD, [], 3);  % Matriz N x 3
+
+% Definir manualmente la matriz de canales W (3 vectores de tinción):
+W_manual = [
+    0.650, 0.072, 0.707;   % Canal 1 (núcleo)
+    0.704, 0.990, 0.707;   % Canal 2 (citoplasma)
+    0.286, 0.117, 0.000    % Canal 3 (residual)
+];
+
+% Normalizar los vectores para que sean unitarios
+W = W_manual ./ vecnorm(W_manual, 2, 2);
+
+% Transponer para usar como base de tinción
+W = W';  % Ahora es 3x3, como se espera
+
+% Proyectar OD a los nuevos canales definidos
+C = OD * inv(W);  % Inversa de la matriz base
+
+% Reconstruir imagen deconvolucionada
+deconvolved_manual = reshape(C, size(IPF));
+
+% Visualizar cada canal
+figure;
+for i = 1:3
+    subplot(1, 3, i);
+    imshow(mat2gray(deconvolved_manual(:,:,i)));
+    switch i
+        case 1
+            title('Canal 1 - Residual');
+        case 2
+            title('Canal 2 - Citoplasma');
+        case 3
+            title('Canal 3 - Núcleo');
+    end
+end
+subplot;
+
+
+
+% Preprocesamiento (ejemplo simple)
+citoplasma_bin = imbinarize(imadjust(deconvolved_manual(:,:,3))); % mejorar contraste y binarizar
+
+% Quitar objetos pequeños
+citoplasma_clean = bwareaopen(citoplasma_bin, 20);
+
+% Extraer propiedades de regiones candidatas
+props = regionprops(citoplasma_clean, 'Centroid', 'Area', 'Eccentricity');
+
+% Filtrar posibles parásitos (regiones pequeñas, redondas, etc.)
+parasite_candidates = [];
+for i = 1:length(props)
+if props(i).Area < 200 && props(i).Eccentricity < 0.8
+parasite_candidates(end+1,:) = props(i).Centroid;
+end
+end
+
+% Suponiendo que el archivo tiene las coordenadas y etiquetas
+dos = readtable('PF-20171023_110309.txt'); % Asegúrate de que el nombre y formato son correctos
+% Ver etiquetas únicas
+disp(unique(dataTable{:,2}));
+
+% Filtrar parásitos reales
+solo_parasitos = dataTable(strcmp(dataTable{:,2}, 'Parasite'), :);
+
+% Mostrar la imagen original
+imshow(IPF); title('Parásitos detectados');
+hold on;
+
+% Dibujar candidatos automáticos
+if ~isempty(parasite_candidates)
+plot(parasite_candidates(:,1), parasite_candidates(:,2), 'r+', 'MarkerSize', 5);
+end
+
+% Dibujar parásitos reales si existen y coordenadas son válidas
+if ~isempty(solo_parasitos) && all(size(solo_parasitos,2) >= 7)
+x_real = solo_parasitos{:,6};
+y_real = solo_parasitos{:,7};
+
+% Verificar que estén dentro del rango de la imagen
+[h, w, ~] = size(IPF);
+validos = x_real > 0 & x_real < w & y_real > 0 & y_real < h;
+
+plot(x_real(validos), y_real(validos), 'go', 'MarkerSize', 5, 'LineWidth', 1.5);
+end
+hold off;
+
+Imagen_citoplasma=deconvolved_manual(:,:,2);
+citoplasma = mat2gray(Imagen_citoplasma);
+figure;
+subplot(1,2,1); imshow(citoplasma); title('Canal de citoplasma');
+subplot(1,2,2); imhist(citoplasma); title('Histograma');
+
+% Crear máscara binaria para el círculo
+bw = imbinarize(Imagen_citoplasma, 'adaptive', ...
+    'ForegroundPolarity', 'dark', 'Sensitivity', 0.4);
+
+% Invertimos si es necesario (círculo oscuro sobre fondo claro)
+if sum(bw(:)) < numel(bw) / 2
+    bw = ~bw;
+end
+
+% Rellenar huecos y quedarnos con el objeto más grande (el círculo central)
+bw = imfill(bw, 'holes');
+bw = bwareafilt(bw, 1);  % Solo el objeto más grande
+
+% Aplicar la máscara al canal único (escala de grises)
+Imagen_masked = Imagen_citoplasma;
+Imagen_masked(~bw) = 0;
+
+% Mostrar resultado
+figure;
+imshow(Imagen_masked);
+title('Solo el círculo central (máscara aplicada)');
+
+
+% DESAROLLO DE 4 MÉTODOS DE SEGMENTACIÓN
+
+% Modelo 1: Local Thresholding
+bw_local = imbinarize(Imagen_masked, 'adaptive','ForegroundPolarity', 'dark','Sensitivity', 0.5); 
+figure;
+imshow(bw_local); title('Umbral Local (Adaptativo)');
+ 
+% Modelo 2: Global Thresholding (Otsu)
+level_global = graythresh(Imagen_masked);
+bw_global = imbinarize(Imagen_masked, level_global);
+figure;
+imshow(bw_global); title('Umbral Global (Otsu)');
+
+% Modelo 3: K-means Clustering
+img_kmeans = double(Imagen_masked(:));  % Vector columna
+k = 5;  % Número de clusters
+[cluster_idx, ~] = kmeans(img_kmeans, k, 'Replicates', 3);
+
+% Reconstruir imagen segmentada
+cluster_img = reshape(cluster_idx, size(Imagen_masked));
+
+figure;
+imagesc(cluster_img);
+axis image off;
+colormap(jet); 
+title('Segmentación con K-means (k=3)');
