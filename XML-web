@@ -1,1 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="exam.xslt"?>
 
+
+<diagnosticos>
+    <paciente id="ak001V1">
+        <nombre>Aarav Sharma</nombre>
+        <edad>34</edad>
+        <genero>F</genero>
+        <fecha>23/04/2025</fecha>
+		<diagnostico>
+			<parasito>falciparum</parasito>
+			<densidadParasitaria>12000/µL</densidadParasitaria>
+			<episodio>Secundario</episodio>
+			<nivelInfeccion>Alta</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>RUTA.jpg</imagen>
+		<observaciones>Realizar una evaluación urgente</observaciones>
+    </paciente>
+	<paciente id="ak943V2">
+        <nombre>Priya Patel</nombre>
+        <edad>62</edad>
+        <genero>M</genero>
+        <fecha>28/04/2025</fecha>
+		<diagnostico>
+			<parasito>falciparum</parasito>
+			<densidadParasitaria>1040/µL</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Moderada</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>RUTA.jpg</imagen>
+		<observaciones></observaciones>
+    </paciente>
+	<paciente id="ak555V3">
+        <nombre>Ravi Reddy</nombre>
+        <edad>57</edad>
+        <genero>M</genero>
+        <fecha>2/05/2025</fecha>
+		<diagnostico>
+			<parasito>vivax</parasito>
+			<densidadParasitaria>800/µL</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Moderada</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>RUTA.jpg</imagen>
+		<observaciones></observaciones>
+    </paciente>
+	<paciente id="ak432V1">
+        <nombre>Anjali Mehta</nombre>
+        <edad>46</edad>
+        <genero>F</genero>
+        <fecha>4/05/2025</fecha>
+		<diagnostico>
+			<parasito>vivax</parasito>
+			<densidadParasitaria>68/µL</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Baja</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>RUTA.jpg</imagen>
+		<observaciones>Hacer seguimiento y repetir examen si persisten los sintomas</observaciones>
+    </paciente>
+	<paciente id="ak876V2">
+        <nombre>Neha Nair</nombre>
+        <edad>29</edad>
+        <genero>F</genero>
+        <fecha>13/05/2025</fecha>
+		<diagnostico>
+			<parasito></parasito>
+			<densidadParasitaria></densidadParasitaria>
+			<episodio></episodio>
+			<nivelInfeccion></nivelInfeccion>
+			<estado>Negativo</estado>
+		</diagnostico>
+		<imagen>RUTA.jpg</imagen>
+		<observaciones>No hay rastro de ningun parasito</observaciones>
+    </paciente>	
+</diagnosticos>
