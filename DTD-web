@@ -1,7 +1,9 @@
 <!ELEMENT diagnosticos (paciente+)>
-<!ELEMENT paciente (nombre, edad, genero, fecha, hora, diagnostico, imagen, observaciones?)>
+<!ELEMENT paciente (datosPersonales, fecha, hora, diagnostico, imagen, observaciones?)>
 <!ATTLIST paciente id ID #REQUIRED>
+<!ELEMENT datosPersonales (nombre, apellido, edad, genero)>
 <!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
 <!ELEMENT edad (#PCDATA)>
 <!ELEMENT genero (#PCDATA)>
 <!ELEMENT fecha (#PCDATA)>
