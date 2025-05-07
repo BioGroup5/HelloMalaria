@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="exam.xslt"?>
+<!--<?xml-stylesheet type="text/xsl" href="exam.xslt"?>
 
 <!DOCTYPE diagnosticos [
 <!ELEMENT diagnosticos (paciente+)>
@@ -18,7 +18,7 @@
 <!ELEMENT estado (#PCDATA)>
 <!ELEMENT imagen (#PCDATA)>
 <!ELEMENT observaciones (#PCDATA)>
-]> 
+]> -->
 
 
 
