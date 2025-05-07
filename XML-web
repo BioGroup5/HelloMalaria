@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="exam.xslt"?>
+<!--<?xml-stylesheet type="text/xsl" href="exam.xslt"?>
+
+<!DOCTYPE diagnosticos [
+<!ELEMENT diagnosticos (paciente+)>
+<!ELEMENT paciente (nombre, edad, genero, fecha, diagnostico, imagen, observaciones?)>
+<!ATTLIST paciente id ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT diagnostico (parasito?, densidadParasitaria?, episodio?, nivelInfeccion?, estado)>
+<!ELEMENT parasito (#PCDATA)>
+<!ELEMENT densidadParasitaria (#PCDATA)>
+<!ELEMENT episodio (#PCDATA)>
+<!ELEMENT nivelInfeccion (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT observaciones (#PCDATA)>
+]> -->
+
 
 
 <diagnosticos>
@@ -18,7 +37,7 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones>Realizar una evaluación urgente</observaciones>
     </paciente>
-	<paciente id="ak943V2">
+    <paciente id="ak943V2">
         <nombre>Priya Patel</nombre>
         <edad>62</edad>
         <genero>M</genero>
@@ -33,7 +52,7 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones></observaciones>
     </paciente>
-	<paciente id="ak555V3">
+    <paciente id="ak555V3">
         <nombre>Ravi Reddy</nombre>
         <edad>57</edad>
         <genero>M</genero>
@@ -48,7 +67,7 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones></observaciones>
     </paciente>
-	<paciente id="ak432V1">
+    <paciente id="ak432V1">
         <nombre>Anjali Mehta</nombre>
         <edad>46</edad>
         <genero>F</genero>
@@ -63,7 +82,7 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones>Hacer seguimiento y repetir examen si persisten los sintomas</observaciones>
     </paciente>
-	<paciente id="ak876V2">
+    <paciente id="ak876V2">
         <nombre>Neha Nair</nombre>
         <edad>29</edad>
         <genero>F</genero>
