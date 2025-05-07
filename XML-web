@@ -3,9 +3,11 @@
 
 <!DOCTYPE diagnosticos [
 <!ELEMENT diagnosticos (paciente+)>
-<!ELEMENT paciente (nombre, edad, genero, fecha, hora, diagnostico, imagen, observaciones?)>
+<!ELEMENT paciente (datosPersonales, fecha, hora, diagnostico, imagen, observaciones?)>
 <!ATTLIST paciente id ID #REQUIRED>
+<!ELEMENT datosPersonales (nombre, apellido, edad, genero)>
 <!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
 <!ELEMENT edad (#PCDATA)>
 <!ELEMENT genero (#PCDATA)>
 <!ELEMENT fecha (#PCDATA)>
@@ -25,10 +27,13 @@
 
 <diagnosticos>
     <paciente id="ak001V1">
-        <nombre>Aarav Sharma</nombre>
-        <edad>34</edad>
-        <genero>F</genero>
-        <fecha>2025-04-23</fecha>
+		<datosPersonales> 
+			<nombre>Aarav</nombre>
+			<apellido>Sharma</apellido>
+			<edad>34</edad>
+			<genero>F</genero>
+		</datosPersonales>
+      		<fecha>2025-04-23</fecha>
 		<hora>08:12</hora>
 		<diagnostico>
 			<parasito>falciparum</parasito>
@@ -40,11 +45,14 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones>Realizar una evaluación urgente</observaciones>
     </paciente>
-	<paciente id="ak943V2">
-        <nombre>Priya Patel</nombre>
-        <edad>62</edad>
-        <genero>M</genero>
-        <fecha>2025-04-28</fecha>
+    <paciente id="ak943V2">
+		<datosPersonales> 
+			<nombre>Priya</nombre>
+			<apellido>Patel</apellido>
+			<edad>62</edad>
+			<genero>M</genero>
+		</datosPersonales> 
+     		<fecha>2025-04-28</fecha>
 		<hora>08:17</hora>
 		<diagnostico>
 			<parasito>falciparum</parasito>
@@ -56,11 +64,14 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones></observaciones>
     </paciente>
-	<paciente id="ak555V3">
-        <nombre>Ravi Reddy</nombre>
-        <edad>57</edad>
-        <genero>M</genero>
-        <fecha>2025-05-02</fecha>
+    <paciente id="ak555V3">
+		<datosPersonales> 
+			<nombre>Ravi</nombre>
+			<apellido>Reddy</apellido>
+			<edad>57</edad>
+			<genero>M</genero>
+		</datosPersonales> 
+       		<fecha>2025-05-02</fecha>
 		<hora>09:37</hora>
 		<diagnostico>
 			<parasito>vivax</parasito>
@@ -72,11 +83,14 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones></observaciones>
     </paciente>
-	<paciente id="ak432V1">
-        <nombre>Anjali Mehta</nombre>
-        <edad>46</edad>
-        <genero>F</genero>
-        <fecha>2025-05-04</fecha>
+    <paciente id="ak432V1">
+		<datosPersonales> 
+			<nombre>Anjali</nombre>
+			<apellido>Mehta</apellido>
+			<edad>46</edad>
+			<genero>F</genero>
+		</datosPersonales> 
+      		<fecha>2025-05-04</fecha>
 		<hora>08:44</hora>
 		<diagnostico>
 			<parasito>vivax</parasito>
@@ -88,11 +102,14 @@
 		<imagen>RUTA.jpg</imagen>
 		<observaciones>Hacer seguimiento y repetir examen si persisten los sintomas</observaciones>
     </paciente>
-	<paciente id="ak876V2">
-        <nombre>Neha Nair</nombre>
-        <edad>29</edad>
-        <genero>F</genero>
-        <fecha>2025-05-13</fecha>
+    <paciente id="ak876V2">
+		<datosPersonales> 
+			<nombre>Neha</nombre>
+			<apellido>Nair</apellido>
+			<edad>29</edad>
+			<genero>F</genero>
+		</datosPersonales> 
+      		<fecha>2025-05-13</fecha>
 		<hora>09:28</hora>
 		<diagnostico>
 			<parasito></parasito>
@@ -105,4 +122,3 @@
 		<observaciones>No hay rastro de ningun parasito</observaciones>
     </paciente>	
 </diagnosticos>
-
