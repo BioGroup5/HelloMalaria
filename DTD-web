@@ -1,1 +1,15 @@
-h
+<!ELEMENT diagnosticos (paciente+)>
+<!ELEMENT paciente (nombre, edad, genero, fecha, diagnostico, imagen, observaciones?)>
+<!ATTLIST paciente id ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT diagnostico (parasito?, densidadParasitaria?, episodio?, nivelInfeccion?, estado)>
+<!ELEMENT parasito (#PCDATA)>
+<!ELEMENT densidadParasitaria (#PCDATA)>
+<!ELEMENT episodio (#PCDATA)>
+<!ELEMENT nivelInfeccion (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT observaciones (#PCDATA)>
