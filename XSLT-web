@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Diagnóstico de Malaria</title>
+				<style>
+					body {
+						font-family: Arial, sans-serif;
+						background-color: #f9f9f9;
+						margin: 20px;
+					}
+					h2 {
+						color: #00796b;
+					}
+					table {
+						width: 100%;
+						border-collapse: collapse;
+						margin-top: 20px;
+					}
+					th, td {
+						border: 1px solid #ccc;
+						padding: 10px;
+						text-align: left;
+					}
+					th {
+						background-color: #b2dfdb;
+						color: #004d40;
+					}
+					.positivo {
+						background-color: #ffcdd2;
+						font-weight: bold;         
+						text-align: center;          
+						color: #d32f2f;
+					}
+					.negativo {
+						background-color: #c8e6c9;
+						font-weight: bold;
+						text-align: center;
+						color: #2e7d32;
+					}
+					.datos {
+						font-size: 0.95em;
+						color: #333;
+					}
+					.datos-positivo {
+						background-color: #ffcdd2;  
+					}
+					
+				</style>
+			</head>
+			<body>
+				<h2>Diagnósticos de Malaria</h2>
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>Datos personales</th>
+						<th>Estado</th>
+						<th>Parásito</th>
+						<th>Densidad(Parasitos/μL)</th>
+						<th>Episodio</th>
+						<th>Infección</th>
+						<th>Fecha</th>
+						<th>Hora</th>
+						<th>Observaciones</th>
+					</tr>
+
+					<xsl:for-each select="diagnosticos/paciente">
+						<tr>
+							<td><xsl:value-of select="@id"/></td>
+							<td>
+							  Nombre y apellido: 
+							  <xsl:value-of select="datosPersonales/nombre"/>
+							  <xsl:text> </xsl:text>
+							  <xsl:value-of select="datosPersonales/apellido"/>
+							  <br/>
+							  Edad: 
+							  <xsl:value-of select="datosPersonales/edad"/> años
+							  <br/>
+							  Género: 
+							  <xsl:value-of select="datosPersonales/genero"/>
+							</td>
+							<td>
+								<xsl:choose>
+									<xsl:when test="diagnostico/estado = 'Positivo'">
+										<span class="positivo">POSITIVO</span>
+									</xsl:when>
+									<xsl:otherwise>
+										<span class="negativo">NEGATIVO</span>
+									</xsl:otherwise>
+								</xsl:choose>
+							</td>
+
+							<!-- Si el estado es negativo, se ocultan las demás celdas médicas -->
+							<xsl:choose>
+								<xsl:when test="diagnostico/estado = 'Negativo'">
+									<td colspan="4" class="negativo" style="text-align:center;" >
+										Sin datos clínicos relevantes
+									</td>
+								</xsl:when>
+								<xsl:otherwise>
+								  <td class="datos-positivo"><xsl:value-of select="diagnostico/parasito"/></td>
+								  <td class="datos-positivo"><xsl:value-of select="diagnostico/densidadParasitaria"/></td>
+								  <td class="datos-positivo"><xsl:value-of select="diagnostico/episodio"/></td>
+								  <td class="datos-positivo"><xsl:value-of select="diagnostico/nivelInfeccion"/></td>
+								</xsl:otherwise>
+							</xsl:choose>
+							<td><xsl:value-of select="fecha"/></td>
+							<td><xsl:value-of select="hora"/></td>					
+							<td><xsl:value-of select="observaciones"/></td>
+						</tr>
+					</xsl:for-each>
+				</table>
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>
