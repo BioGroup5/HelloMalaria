@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="diagnosticos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="paciente" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="datosPersonales" maxOccurs="1" minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+											<xs:element name="nombre" type="xs:string" maxOccurs="1" minOccurs="1"/>
+											<xs:element name="apellido" type="xs:string" maxOccurs="1" minOccurs="1"/>
+											<xs:element name="edad" type="xs:integer" maxOccurs="1" minOccurs="1"/>
+											<xs:element name="genero" maxOccurs="1" minOccurs="1">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="F|M"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fecha" type="xs:date" maxOccurs="1" minOccurs="1"/>
+							<xs:element name="hora" type="xs:time" maxOccurs="1" minOccurs="1"/>
+							<xs:element name="diagnostico" maxOccurs="1" minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="parasito" type="xs:string" maxOccurs="1" minOccurs="0"/>
+										<xs:element name="densidadParasitaria" type="xs:string" maxOccurs="1" minOccurs="0"/>
+										<xs:element name="episodio" type="xs:string" maxOccurs="1" minOccurs="0"/>
+										<xs:element name="nivelInfeccion" type="xs:string" maxOccurs="1" minOccurs="0"/>
+										<xs:element name="estado" maxOccurs="1" minOccurs="1">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="Positivo|Negativo"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="imagen" type="xs:string" maxOccurs="1" minOccurs="1"/>
+							<xs:element name="observaciones" type="xs:string" maxOccurs="1" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="id" use="required"> 
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="PT-[A-Z]{2}-[0-9]{6}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

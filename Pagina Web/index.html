@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualización de diagnósticos</title>
+  <link rel="stylesheet" href="Saluvia.css">
+</head>
+
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande">
+        </a>
+      </div>
+      <input type="checkbox" id="menu">
+      <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
+          <li>
+            <a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+              <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+            </a>
+          </li>
+          <li><a href="login.html" class="btn-login" id="nav-login">Inicio de sesión / Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-content container">
+      <div class="header-info">
+        <h1 id="titulo">Bienvenido a Saluvia</h1>
+        <p id="descripcion" class="eslogan">Diagnóstico rápido y preciso de malaria desde cualquier lugar.</p>
+        <a href="Contacto.html" class="btn-1" id="ver-productos">Descubre cómo funciona</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="resumen-visual container" id="ResumenVisual">
+    <div class="bloque-resumen">
+      <h3 id="resumen-quienes">Quiénes somos</h3>
+      <p id="resumen-quienes-desc">Un equipo multidisciplinar comprometido con la salud global y la tecnología accesible.</p>
+    </div>
+    <div class="bloque-resumen">
+      <h3 id="resumen-que">Qué hacemos</h3>
+      <p id="resumen-que-desc">Desarrollamos soluciones basadas en inteligencia artificial para diagnosticar la malaria eficientemente.</p>
+    </div>
+    <div class="bloque-resumen">
+      <h3 id="resumen-como">Cómo te ayudamos</h3>
+      <p id="resumen-como-desc">Facilitamos diagnósticos rápidos y precisos, accesibles incluso en zonas con pocos recursos.</p>
+    </div>
+    <div class="boton-leer-mas-contenedor">
+      <a href="SobreNosotros.html" class="boton-leer-mas" id="boton-leer-mas">Leer más</a>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p id="footer-contacto"><strong>Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p id="footer-ubicacion"><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p id="footer-copy"><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let idioma = "es";
+
+    const textos = {
+      es: {
+        "nav-inicio": "Inicio",
+        "nav-sobrenosotros": "Sobre nosotros",
+        "nav-contacto": "Plataforma",
+        "nav-tienda": "Recursos",
+        "nav-login": "Inicio de sesión / Registro",
+        "titulo": "Bienvenido a Saluvia",
+        "descripcion": "Diagnóstico rápido y preciso de malaria desde cualquier lugar.",
+        "ver-productos": "Descubre cómo funciona",
+        "resumen-quienes": "Quiénes somos",
+        "resumen-quienes-desc": "Un equipo multidisciplinar comprometido con la salud global y la tecnología accesible.",
+        "resumen-que": "Qué hacemos",
+        "resumen-que-desc": "Desarrollamos soluciones basadas en inteligencia artificial para diagnosticar la malaria eficientemente.",
+        "resumen-como": "Cómo te ayudamos",
+        "resumen-como-desc": "Facilitamos diagnósticos rápidos y precisos, accesibles incluso en zonas con pocos recursos.",
+        "boton-leer-mas": "Leer más",
+        "footer-contacto": "Contacto: saluvia@gmail.com | +34 912 345 678",
+        "footer-ubicacion": "Ubicación: Loramendi kalea 4, Arrasate",
+        "footer-copy": "© 2025 Saluvia. Todos los derechos reservados.",
+        "lang-es": "<strong>ES</strong>",
+        "lang-en": "EN"
+      },
+      en: {
+        "nav-inicio": "Home",
+        "nav-sobrenosotros": "About Us",
+        "nav-contacto": "Platform",
+        "nav-tienda": "Resources",
+        "nav-login": "Login / Register",
+        "titulo": "Welcome to Saluvia",
+        "descripcion": "Fast and accurate malaria diagnosis from anywhere.",
+        "ver-productos": "See how it works",
+        "resumen-quienes": "Who we are",
+        "resumen-quienes-desc": "A multidisciplinary team committed to global health and accessible technology.",
+        "resumen-que": "What we do",
+        "resumen-que-desc": "We develop AI-based solutions to efficiently diagnose malaria.",
+        "resumen-como": "How we help you",
+        "resumen-como-desc": "We provide fast and accurate diagnostics, even in low-resource settings.",
+        "boton-leer-mas": "Read more",
+        "footer-contacto": "Contact: saluvia@gmail.com | +34 912 345 678",
+        "footer-ubicacion": "Location: Loramendi kalea 4, Arrasate",
+        "footer-copy": "© 2025 Saluvia. All rights reserved.",
+        "lang-es": "ES",
+        "lang-en": "<strong>EN</strong>"
+      }
+    };
+
+    function cambiarIdioma() {
+      idioma = (idioma === "es") ? "en" : "es";
+
+      for (const id in textos[idioma]) {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = textos[idioma][id];
+      }
+
+      const esEl = document.getElementById("lang-es");
+      const enEl = document.getElementById("lang-en");
+
+      if (idioma === "es") {
+        esEl.innerHTML = "<strong>ES</strong>";
+        enEl.innerHTML = "EN";
+      } else {
+        esEl.innerHTML = "ES";
+        enEl.innerHTML = "<strong>EN</strong>";
+      }
+    }
+  </script>
+</body>
+</html>

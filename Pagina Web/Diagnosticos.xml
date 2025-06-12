@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Diagnosticos.xslt"?>
+<?xml-stylesheet type="text/css" href="Diagnosticos.css"?>
+
+<diagnosticos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Diagnosticos.xsd">
+    <paciente id="PT-DL-030001">
+		<datosPersonales> 
+			<nombre>Aarav</nombre>
+			<apellido>Sharma</apellido>
+			<edad>34</edad>
+			<genero>F</genero>
+		</datosPersonales>
+        <fecha>2025-04-23</fecha>
+		<hora>08:12:00</hora>
+		<diagnostico>
+			<parasito>falciparum</parasito>
+			<densidadParasitaria>12000</densidadParasitaria>
+			<episodio>Secundario</episodio>
+			<nivelInfeccion>Alta</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>images/Positivo1.jpg</imagen>
+		<observaciones>Realizar una evaluación urgente</observaciones>
+    </paciente>
+	<paciente id="PT-MH-200012">
+		<datosPersonales> 
+			<nombre>Priya</nombre>
+			<apellido>Patel</apellido>
+			<edad>62</edad>
+			<genero>M</genero>
+		</datosPersonales> 
+        <fecha>2025-04-28</fecha>
+		<hora>08:17:00</hora>
+		<diagnostico>
+			<parasito>falciparum</parasito>
+			<densidadParasitaria>1040</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Moderada</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>images/Positivo2.jpg</imagen>
+		<observaciones></observaciones>
+    </paciente>
+	<paciente id="PT-TN-210143">
+		<datosPersonales> 
+			<nombre>Ravi</nombre>
+			<apellido>Reddy</apellido>
+			<edad>57</edad>
+			<genero>M</genero>
+		</datosPersonales> 
+        <fecha>2025-05-02</fecha>
+		<hora>09:37:00</hora>
+		<diagnostico>
+			<parasito>vivax</parasito>
+			<densidadParasitaria>800</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Moderada</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>images/Positivo3.jpg</imagen>
+		<observaciones></observaciones>
+    </paciente>
+	<paciente id="PT-KA-180078">
+		<datosPersonales> 
+			<nombre>Anjali</nombre>
+			<apellido>Mehta</apellido>
+			<edad>46</edad>
+			<genero>F</genero>
+		</datosPersonales> 
+        <fecha>2025-05-04</fecha>
+		<hora>08:44:00</hora>
+		<diagnostico>
+			<parasito>vivax</parasito>
+			<densidadParasitaria>68</densidadParasitaria>
+			<episodio>Primario</episodio>
+			<nivelInfeccion>Baja</nivelInfeccion>
+			<estado>Positivo</estado>
+		</diagnostico>
+		<imagen>images/Positivo4.jpg</imagen>
+		<observaciones>Hacer seguimiento y repetir examen si persisten los sintomas</observaciones>
+    </paciente>
+	<paciente id="PT-UP-210225">
+		<datosPersonales> 
+			<nombre>Neha</nombre>
+			<apellido>Nair</apellido>
+			<edad>29</edad>
+			<genero>F</genero>
+		</datosPersonales> 
+        <fecha>2025-05-13</fecha>
+		<hora>09:28:00</hora>
+		<diagnostico>
+			<parasito></parasito>
+			<densidadParasitaria></densidadParasitaria>
+			<episodio></episodio>
+			<nivelInfeccion></nivelInfeccion>
+			<estado>Negativo</estado>
+		</diagnostico>
+		<imagen>images/Negativo.jpg</imagen>
+		<observaciones>No hay rastro de ningun parasito</observaciones>
+    </paciente>	
+</diagnosticos>

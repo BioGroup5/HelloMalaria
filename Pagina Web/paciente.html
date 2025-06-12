@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área del Paciente</title>
+  <link rel="stylesheet" href="paciente.css">
+</head>
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande">
+        </a>
+      </div>
+      <input type="checkbox" id="menu">
+      <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
+          <li><a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+            <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+          </a></li>
+          <li><a href="login.html" class="btn-login" id="nav-login">Inicio de sesión / Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="paciente-section container">
+    <h2 id="bienvenida">Bienvenida, Neha Nair</h2>
+
+    <div class="diagnostico-box">
+      <h3 id="titulo-diagnostico">Resultados del diagnóstico de malaria</h3>
+      <p><strong>ID:</strong> PT-UP-210225</p>
+      <p><strong id="fecha-label">Fecha:</strong> 13/05/2025</p>
+      <p><strong id="hora-label">Hora:</strong> 09:28 AM</p>
+      <p><strong id="estado-label">Estado:</strong> <span style="color:green;"><strong id="estado">Negativo</strong></span></p>
+      <p><strong id="datos-personales-label">Datos personales:</strong> Neha Nair, 29 años, India</p>
+    </div>
+
+    <div class="acciones-links">
+      <h3 id="accesos-rapidos">Accesos rápidos</h3>
+      <div class="icon-row">
+        <a href="#cita-previa" class="icon-link" title="Cita previa"><img src="images/citaPrevia.jpg" alt="Cita Previa"></a>
+        <a href="#centro-sanitario" class="icon-link" title="Centro sanitario"><img src="images/ubicacion.jpg" alt="Centro Sanitario"></a>
+        <a href="#cuida-salud" class="icon-link" title="Cuida tu salud"><img src="images/salud.jpg" alt="Cuida tu Salud"></a>
+        <a href="#carpeta-salud" class="icon-link" title="Carpeta de salud"><img src="images/carpeta.jpg" alt="Carpeta de Salud"></a>
+        <a href="#paciente-activo" class="icon-link" title="Paciente activo"><img src="images/paciente.jpg" alt="Paciente Activo"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cita-previa" class="bloque-visual">
+    <h3><img src="images/citaPrevia.jpg" alt="Icono Cita" class="titulo-icono"> <span id="titulo-cita">Cita previa</span></h3>
+    <p id="texto-cita">Selecciona una cita médica:</p>
+    <form class="form-cita">
+      <label for="fecha" id="label-fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha">
+
+      <label for="hora" id="label-hora">Hora:</label>
+      <select id="hora" name="hora">
+        <option value="08:00">08:00</option>
+        <option value="10:00">10:00</option>
+        <option value="12:00">12:00</option>
+        <option value="14:00">14:00</option>
+      </select>
+
+      <label for="motivo" id="label-motivo">Motivo:</label>
+      <input type="text" id="motivo" name="motivo" placeholder="Consulta, revisión...">
+
+      <button type="button" disabled id="btn-confirmar">Confirmar</button>
+    </form>
+  </section>
+
+  <section id="centro-sanitario" class="bloque-visual">
+    <h3><img src="images/ubicacion.jpg" alt="Icono ubicacion" class="titulo-icono"> <span id="titulo-centro">Encuentra tu centro sanitario</span></h3>
+    <p id="texto-centro">Puedes localizar tu centro más cercano según tu distrito, código postal o nombre. Función disponible próximamente.</p>
+    <div class="mapa-contenedor">
+      <img src="images/sitios.jpg" alt="Mapa de centros sanitarios" class="mapa-imagen">
+    </div>
+  </section>
+
+  <section id="cuida-salud" class="bloque-visual">
+    <h3><img src="images/salud.jpg" alt="Icono salud" class="titulo-icono"> <span id="titulo-cuida">Cuida tu salud</span></h3>
+    <ul id="lista-cuidados">
+      <li>️ Usa mosquiteras y repelentes</li>
+      <li>️ Realiza controles periódicos</li>
+      <li>️ Hidrátate adecuadamente</li>
+      <li>️ Toma medicación profiláctica si viajas</li>
+    </ul>
+  </section>
+
+  <section id="carpeta-salud" class="bloque-visual">
+    <h3><img src="images/carpeta.jpg" alt="Icono carpeta" class="titulo-icono"> <span id="titulo-carpeta">Carpeta de salud</span></h3>
+    <p id="texto-carpeta">Aquí verás tus resultados, citas programadas y tratamientos asignados. Este apartado estará disponible próximamente.</p>
+  </section>
+
+  <section id="paciente-activo" class="bloque-visual">
+    <h3><img src="images/paciente.jpg" alt="Icono paciente" class="titulo-icono"> <span id="titulo-activo">Paciente activo</span></h3>
+    <p id="texto-activo">Accede a recursos como:</p>
+    <ul id="lista-activo">
+      <li>Vídeos educativos sobre salud</li>
+      <li>Artículos semanales</li>
+      <li>Retos de salud y bienestar</li>
+    </ul>
+  </section>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p><strong>Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE TRADUCCIÓN -->
+  <script>
+    let idioma = "es";
+
+    const textos = {
+      es: {
+        "nav-inicio": "Inicio",
+        "nav-sobrenosotros": "Sobre nosotros",
+        "nav-contacto": "Plataforma",
+        "nav-tienda": "Recursos",
+        "nav-login": "Inicio de sesión / Registro",
+        "bienvenida": "Bienvenida, Neha Nair",
+        "titulo-diagnostico": "Resultados del diagnóstico de malaria",
+        "fecha-label": "Fecha:",
+        "hora-label": "Hora:",
+        "estado-label": "Estado:",
+        "estado": "Negativo",
+        "datos-personales-label": "Datos personales:",
+        "accesos-rapidos": "Accesos rápidos",
+        "titulo-cita": "Cita previa",
+        "texto-cita": "Selecciona una cita médica:",
+        "label-fecha": "Fecha:",
+        "label-hora": "Hora:",
+        "label-motivo": "Motivo:",
+        "btn-confirmar": "Confirmar",
+        "titulo-centro": "Encuentra tu centro sanitario",
+        "texto-centro": "Puedes localizar tu centro más cercano según tu distrito, código postal o nombre. Función disponible próximamente.",
+        "titulo-cuida": "Cuida tu salud",
+        "titulo-carpeta": "Carpeta de salud",
+        "texto-carpeta": "Aquí verás tus resultados, citas programadas y tratamientos asignados. Este apartado estará disponible próximamente.",
+        "titulo-activo": "Paciente activo",
+        "texto-activo": "Accede a recursos como:",
+        "lista-cuidados": [
+          "️ Usa mosquiteras y repelentes",
+          "️ Realiza controles periódicos",
+          "️ Hidrátate adecuadamente",
+          "️ Toma medicación profiláctica si viajas"
+        ],
+        "lista-activo": [
+          "Vídeos educativos sobre salud",
+          "Artículos semanales",
+          "Retos de salud y bienestar"
+        ]
+      },
+      en: {
+        "nav-inicio": "Home",
+        "nav-sobrenosotros": "About us",
+        "nav-contacto": "Platform",
+        "nav-tienda": "Resources",
+        "nav-login": "Login / Register",
+        "bienvenida": "Welcome, Neha Nair",
+        "titulo-diagnostico": "Malaria diagnosis results",
+        "fecha-label": "Date:",
+        "hora-label": "Time:",
+        "estado-label": "Status:",
+        "estado": "Negative",
+        "datos-personales-label": "Personal data:",
+        "accesos-rapidos": "Quick access",
+        "titulo-cita": "Appointment",
+        "texto-cita": "Select a medical appointment:",
+        "label-fecha": "Date:",
+        "label-hora": "Time:",
+        "label-motivo": "Reason:",
+        "btn-confirmar": "Confirm",
+        "titulo-centro": "Find your health center",
+        "texto-centro": "You can locate the nearest center by district, postal code or name. Function available soon.",
+        "titulo-cuida": "Take care of your health",
+        "titulo-carpeta": "Health folder",
+        "texto-carpeta": "Here you will see your results, scheduled appointments and treatments. This section will be available soon.",
+        "titulo-activo": "Active patient",
+        "texto-activo": "Access resources such as:",
+		"footer-contacto": "Contact: saluvia@gmail.com | +34 912 345 678",
+        "footer-ubicacion": "Location: Loramendi kalea 4, Arrasate",
+        "footer-copy": "© 2025 Saluvia. All rights reserved.",
+        "lista-cuidados": [
+          "️ Use nets and repellents",
+          "️ Get regular check-ups",
+          "️ Stay hydrated",
+          "️ Take preventive medication when traveling"
+        ],
+        "lista-activo": [
+          "Educational health videos",
+          "Weekly articles",
+          "Health and wellness challenges"
+        ]
+      }
+    };
+
+    function cambiarIdioma() {
+      idioma = (idioma === "es") ? "en" : "es";
+
+      for (const id in textos[idioma]) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (Array.isArray(textos[idioma][id])) {
+            el.innerHTML = textos[idioma][id].map(item => `<li>${item}</li>`).join('');
+          } else {
+            el.textContent = textos[idioma][id];
+          }
+        }
+      }
+
+      document.getElementById("lang-es").innerHTML = idioma === "es" ? "<strong>ES</strong>" : "ES";
+      document.getElementById("lang-en").innerHTML = idioma === "en" ? "<strong>EN</strong>" : "EN";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="titulo-pagina">Iniciar sesión</title>
+  <link rel="stylesheet" href="sanitario.css" />
+</head>
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande" />
+        </a>
+      </div>
+      <input type="checkbox" id="menu" />
+      <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu" /></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
+          <li>
+            <a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+              <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="btn-login" id="nav-login">Inicio de sesión / Registro</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <h1 id="titulo-principal">Área de Diagnóstico para Personal Sanitario</h1>
+    <div class="Buscador" id="tabla-sanitarios">
+
+      <!-- Buscador (no funcional) -->
+      <form id="buscador" style="margin-bottom: 20px; text-align: center;">
+        <input
+          type="text"
+          placeholder="Buscar por ID o nombre del paciente"
+          id="placeholder-buscador"
+          style="padding: 10px; width: 60%; max-width: 400px; border: 1px solid #ccc; border-radius: 5px;"
+        />
+        <button
+          type="submit"
+          id="boton-buscar"
+          style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;"
+        >
+          Buscar
+        </button>
+      </form>
+
+      <!-- Resultado de la transformación -->
+      <div id="resultado">Cargando...</div>
+
+      <!-- Información adicional -->
+      <div class="info-extra">
+        <h2 id="titulo-positivo">Indicaciones para pacientes con resultado positivo:</h2>
+        <p id="texto-positivo">
+          Este documento debe ser entregado al paciente en el momento en que se confirma un diagnóstico positivo de malaria. Incluye indicaciones clave sobre aislamiento, uso de mascarilla, inicio del tratamiento y recomendaciones generales durante el proceso de recuperación.
+        </p>
+        <a href="images/Instrucciones_Positivo_Malaria.pdf" target="_blank" class="pdf-button" id="pdf-positivo">Ver documento PDF</a>
+
+        <h2 id="titulo-negativo">Indicaciones para pacientes con síntomas de malaria pero resultado negativo:</h2>
+        <p id="texto-negativo">
+          Este documento informa al paciente de que, aunque su prueba ha resultado negativa, presenta síntomas compatibles con malaria. Podría tratarse de un falso negativo. Se recomienda repetir la prueba en unos días y seguir ciertas precauciones.
+        </p>
+        <a href="images/Instrucciones_Sintomas_Negativo.pdf" target="_blank" class="pdf-button" id="pdf-negativo">Ver documento PDF</a>
+
+        <h2 id="titulo-checklist">Lista de comprobación clínica (Check-list):</h2>
+        <ul id="lista-checklist">
+          <li>☐ Fiebre ≥ 38°C</li>
+          <li>☐ Escalofríos / sudoración</li>
+          <li>☐ Cefalea</li>
+          <li>☐ Dolor muscular o articular</li>
+          <li>☐ Náuseas o vómitos</li>
+          <li>☐ Diarrea</li>
+          <li>☐ Fatiga extrema</li>
+          <li>☐ Palidez mucocutánea</li>
+          <li>☐ Hepatoesplenomegalia (a la palpación)</li>
+          <li>☐ Alteración del nivel de conciencia</li>
+        </ul>
+
+        <h2 id="titulo-info-personal">Información dirigida al personal sanitario:</h2>
+        <p id="texto-info-personal">
+          La malaria es una enfermedad heterogénea cuyo manejo exige una clasificación precisa del agente causal y un conocimiento actualizado de las características clínicas, epidemiológicas y farmacológicas de cada especie. <br />
+          La correcta identificación del Plasmodium permite orientar la prevención, seleccionar la quimioprofilaxis adecuada y aplicar el tratamiento más efectivo, disminuyendo la morbilidad y mortalidad asociadas. El personal sanitario debe estar familiarizado con las diferentes presentaciones clínicas y terapéuticas, así como con los avances en vacunación para contribuir eficazmente a la lucha contra la malaria.
+        </p>
+
+        <br />
+        <p><u id="titulo-clasificacion">Clasificación según la especie de Plasmodium</u><br />
+          Actualmente se reconocen cinco especies principales que afectan a humanos.<br />
+          <em>Plasmodium falciparum</em> es la especie más peligrosa responsable de la mayoría de los casos de malaria grave y mortal clínicamente puede desencadenar complicaciones severas como malaria cerebral anemia intensa y fallo multiorgánico geográficamente predomina en África subsahariana y también está presente en áreas tropicales de Asia y América los individuos con anemia falciforme en heterocigosis poseen resistencia natural frente a esta especie no genera hipnozoitos por lo que no produce recaídas.<br />
+          <em>Plasmodium vivax</em> produce una forma de malaria más leve pero con capacidad para provocar recaídas debido a la formación de hipnozoitos latentes en el hígado es común en Asia América Latina y algunas regiones africanas pero poco frecuente en África subsahariana debido a la ausencia del antígeno Duffy en gran parte de la población requerido para la infección por este parásito.<br />
+          <em>Plasmodium ovale</em> similar clínicamente a P vivax también puede producir recaídas por hipnozoitos hepáticos aunque con síntomas generalmente más leves se encuentra en África Occidental y algunas regiones del Pacífico a diferencia de P vivax puede infectar a individuos sin el antígeno Duffy favoreciendo su presencia en comunidades africanas.<br />
+          <em>Plasmodium malariae</em> causa una forma más benigna y crónica de malaria con ciclos febriles cada 72 horas y persistencia prolongada en el organismo si no se trata se encuentra de forma dispersa en África Asia y América no produce hipnozoitos ni resistencia genética significativa.<br />
+          <em>Plasmodium knowlesi</em> es un parásito zoonótico originario de monos que actualmente infecta a humanos principalmente en el sudeste asiático especialmente Malasia y Borneo su ciclo de reproducción es rápido 24 horas lo que puede conducir a un deterioro clínico acelerado similar al de P falciparum los humanos carecen de inmunidad natural contra esta especie.<br />
+          Las infecciones mixtas con más de una especie de Plasmodium son poco frecuentes pero posibles además existen otras especies y subespecies que pueden afectar al ser humano en situaciones específicas.<br />
+        </p>
+
+        <br />
+        <br />
+        <p><u id="titulo-prevencion">Prevención quimioprofilaxis y vacunación</u><br />
+          La prevención es fundamental para controlar la malaria especialmente en poblaciones vulnerables y zonas de alta transmisión la quimioprofilaxis consiste en la administración de medicamentos antipalúdicos para prevenir el desarrollo de la infección o enfermedad durante períodos de riesgo independientemente de la presencia o no de infección activa.<br />
+          Los medicamentos profilácticos más utilizados incluyen <em>Atovacuona e Hidrocloruro de proguanil Malarone</em> indicado para prevención y tratamiento de malaria no complicada por P falciparum especialmente en zonas con resistencia a cloroquina actúa bloqueando el metabolismo y reproducción del parásito puede producir efectos adversos como cefalea náuseas vómitos mareos y reacciones alérgicas.<br />
+          <em>Doxiciclina</em> es un antibiótico del grupo de las tetraciclinas utilizado en zonas con P falciparum resistente a cloroquina además de su acción antipalúdica protege contra otras infecciones bacterianas y puede causar náuseas vómitos diarrea y reacciones cutáneas.<br />
+          <em>Primaquina y Tafenoquina</em> son esenciales para eliminar hipnozoitos hepáticos y prevenir recaídas de P vivax y P ovale la tafenoquina presenta una vida más larga permitiendo una dosificación única para profilaxis prolongada pueden ocasionar reacciones hemolíticas problemas gastrointestinales y alergias.<br />
+          <em>Cloroquina</em> tradicionalmente usada para prevención y tratamiento de malaria por especies no resistentes tiene un uso limitado en zonas con resistencia de P falciparum y puede producir efectos secundarios como cefalea erupciones cutáneas prurito y alteraciones gastrointestinales.<br />
+          En cuanto a las vacunas disponibles <em>Mosquirix RTS,S/AS01</em> es la primera vacuna recomendada por la OMS para prevenir malaria por P falciparum en niños entre 5 y 17 meses especialmente en África subsahariana se administra en un esquema de tres dosis con posible dosis de refuerzo reduce la mortalidad global por malaria en un 13% y la mortalidad por malaria complicada en un 30%.<br />
+          La vacuna <em>R21 Malaria Vaccine R21/Matrix-M</em> está desarrollada para niños de 5 a 36 meses con eficacia superior reducción del 75% de casos sintomáticos durante el primer año tras la vacunación y un costo más bajo también se administra en tres dosis más una dosis de refuerzo y está en proceso de implementación en regiones de alta transmisión ambas vacunas presentan un perfil de seguridad favorable con efectos secundarios leves y transitorios.<br />
+        </p>
+
+        <br />
+        <br />
+        <p><u id="titulo-tratamiento">Consideraciones para el tratamiento</u><br />
+          El tratamiento debe ajustarse a la especie identificada y a la gravedad clínica.<br />
+          En malaria no complicada por especies distintas de P falciparum se emplea cloroquina oral con alternativas como quinina o pirimetamina-sulfadiazina cuando hay resistencia la quinina elimina el parásito pero no se usa para profilaxis.<br />
+          En malaria complicada principalmente por P falciparum se requiere tratamiento hospitalario con quinina intravenosa y en los últimos años con artemisininas que han demostrado mayor eficacia y mejor tolerancia.<br />
+          En zonas con resistencia a cloroquina se utilizan medicamentos como mefloquina que tiene uso tanto preventivo como terapéutico.<br />
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div
+      id="imageModal"
+      style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); text-align:center;"
+    >
+      <span
+        style="position:absolute; top:20px; right:30px; color:white; font-size:30px; cursor:pointer;"
+        onclick="closeModal()"
+        >&times;</span
+      >
+      <img id="modalImage" style="max-width:90%; max-height:90%; margin-top:50px;" />
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer" />
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU" />
+    </div>
+    <div class="info-footer">
+      <p><strong>Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("imageModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Textos en español
+    const textosES = {
+      "titulo-pagina": "Iniciar sesión",
+      "nav-inicio": "Inicio",
+      "nav-sobrenosotros": "Sobre nosotros",
+      "nav-contacto": "Plataforma",
+      "nav-tienda": "Recursos",
+      "nav-login": "Inicio de sesión / Registro",
+      "titulo-principal": "Área de Diagnóstico para Personal Sanitario",
+      "placeholder-buscador": "Buscar por ID o nombre del paciente",
+      "boton-buscar": "Buscar",
+      "titulo-positivo": "Indicaciones para pacientes con resultado positivo:",
+      "texto-positivo": "Este documento debe ser entregado al paciente en el momento en que se confirma un diagnóstico positivo de malaria. Incluye indicaciones clave sobre aislamiento, uso de mascarilla, inicio del tratamiento y recomendaciones generales durante el proceso de recuperación.",
+      "pdf-positivo": "Ver documento PDF",
+      "titulo-negativo": "Indicaciones para pacientes con síntomas de malaria pero resultado negativo:",
+      "texto-negativo": "Este documento informa al paciente de que, aunque su prueba ha resultado negativa, presenta síntomas compatibles con malaria. Podría tratarse de un falso negativo. Se recomienda repetir la prueba en unos días y seguir ciertas precauciones.",
+      "pdf-negativo": "Ver documento PDF",
+      "titulo-checklist": "Lista de comprobación clínica (Check-list):",
+      "lista-checklist": [
+        "☐ Fiebre ≥ 38°C",
+        "☐ Escalofríos / sudoración",
+        "☐ Cefalea",
+        "☐ Dolor muscular o articular",
+        "☐ Náuseas o vómitos",
+        "☐ Diarrea",
+        "☐ Fatiga extrema",
+        "☐ Palidez mucocutánea",
+        "☐ Hepatoesplenomegalia (a la palpación)",
+        "☐ Alteración del nivel de conciencia"
+      ],
+      "titulo-info-personal": "Información dirigida al personal sanitario:",
+      "texto-info-personal": "La malaria es una enfermedad heterogénea cuyo manejo exige una clasificación precisa del agente causal y un conocimiento actualizado de las características clínicas, epidemiológicas y farmacológicas de cada especie. <br />La correcta identificación del Plasmodium permite orientar la prevención, seleccionar la quimioprofilaxis adecuada y aplicar el tratamiento más efectivo, disminuyendo la morbilidad y mortalidad asociadas. El personal sanitario debe estar familiarizado con las diferentes presentaciones clínicas y terapéuticas, así como con los avances en vacunación para contribuir eficazmente a la lucha contra la malaria.",
+      "titulo-clasificacion": "Clasificación según la especie de Plasmodium",
+      "titulo-prevencion": "Prevención quimioprofilaxis y vacunación",
+      "titulo-tratamiento": "Consideraciones para el tratamiento"
+    };
+
+    // Textos en inglés
+    const textosEN = {
+      "titulo-pagina": "Log in",
+      "nav-inicio": "Home",
+      "nav-sobrenosotros": "About us",
+      "nav-contacto": "Platform",
+      "nav-tienda": "Resources",
+      "nav-login": "Log in / Register",
+      "titulo-principal": "Diagnostic Area for Healthcare Personnel",
+      "placeholder-buscador": "Search by patient ID or name",
+      "boton-buscar": "Search",
+      "titulo-positivo": "Instructions for patients with positive result:",
+      "texto-positivo": "This document must be given to the patient at the moment a positive malaria diagnosis is confirmed. It includes key instructions about isolation, mask use, treatment initiation, and general recommendations during recovery.",
+      "pdf-positivo": "View PDF document",
+      "titulo-negativo": "Instructions for patients with malaria symptoms but negative result:",
+      "texto-negativo": "This document informs the patient that although their test was negative, they have symptoms compatible with malaria. It might be a false negative. Repeating the test in a few days and following precautions is recommended.",
+      "pdf-negativo": "View PDF document",
+      "titulo-checklist": "Clinical checklist:",
+      "lista-checklist": [
+        "☐ Fever ≥ 38°C",
+        "☐ Chills / sweating",
+        "☐ Headache",
+        "☐ Muscle or joint pain",
+        "☐ Nausea or vomiting",
+        "☐ Diarrhea",
+        "☐ Extreme fatigue",
+        "☐ Mucocutaneous pallor",
+        "☐ Hepatosplenomegaly (on palpation)",
+        "☐ Altered level of consciousness"
+      ],
+      "titulo-info-personal": "Information for healthcare personnel:",
+      "texto-info-personal": "Malaria is a heterogeneous disease whose management requires precise classification of the causative agent and updated knowledge of clinical, epidemiological, and pharmacological characteristics of each species. <br />Correct identification of Plasmodium guides prevention, selects appropriate chemoprophylaxis, and applies the most effective treatment, reducing associated morbidity and mortality. Healthcare personnel should be familiar with different clinical and therapeutic presentations, as well as vaccination advances to effectively contribute to malaria control.",
+      "titulo-clasificacion": "Classification according to Plasmodium species",
+      "titulo-prevencion": "Prevention, chemoprophylaxis, and vaccination",
+      "titulo-tratamiento": "Treatment considerations"
+    };
+
+    let idiomaActual = "ES"; // Por defecto español
+
+    function cambiarIdioma() {
+      idiomaActual = idiomaActual === "ES" ? "EN" : "ES";
+      const textos = idiomaActual === "ES" ? textosES : textosEN;
+
+      // Cambiar título de la página
+      document.title = textos["titulo-pagina"];
+
+      // Cambiar texto del navbar
+      document.getElementById("nav-inicio").textContent = textos["nav-inicio"];
+      document.getElementById("nav-sobrenosotros").textContent = textos["nav-sobrenosotros"];
+      document.getElementById("nav-contacto").textContent = textos["nav-contacto"];
+      document.getElementById("nav-tienda").textContent = textos["nav-tienda"];
+      document.getElementById("nav-login").textContent = textos["nav-login"];
+
+      // Cambiar título principal
+      document.getElementById("titulo-principal").textContent = textos["titulo-principal"];
+
+      // Cambiar placeholder y botón del buscador
+      document.getElementById("placeholder-buscador").placeholder = textos["placeholder-buscador"];
+      document.getElementById("boton-buscar").textContent = textos["boton-buscar"];
+
+      // Cambiar textos secciones positivas y negativas
+      document.getElementById("titulo-positivo").textContent = textos["titulo-positivo"];
+      document.getElementById("texto-positivo").textContent = textos["texto-positivo"];
+      document.getElementById("pdf-positivo").textContent = textos["pdf-positivo"];
+
+      document.getElementById("titulo-negativo").textContent = textos["titulo-negativo"];
+      document.getElementById("texto-negativo").textContent = textos["texto-negativo"];
+      document.getElementById("pdf-negativo").textContent = textos["pdf-negativo"];
+
+      // Cambiar checklist
+      document.getElementById("titulo-checklist").textContent = textos["titulo-checklist"];
+      const lista = document.getElementById("lista-checklist");
+      lista.innerHTML = "";
+      textos["lista-checklist"].forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        lista.appendChild(li);
+      });
+
+      // Cambiar información personal sanitario
+      document.getElementById("titulo-info-personal").textContent = textos["titulo-info-personal"];
+      document.getElementById("texto-info-personal").innerHTML = textos["texto-info-personal"];
+
+      // Cambiar títulos de secciones largas
+      document.getElementById("titulo-clasificacion").textContent = textos["titulo-clasificacion"];
+      document.getElementById("titulo-prevencion").textContent = textos["titulo-prevencion"];
+      document.getElementById("titulo-tratamiento").textContent = textos["titulo-tratamiento"];
+
+      // Cambiar estilo de los botones de idioma
+      if (idiomaActual === "ES") {
+        document.getElementById("lang-es").style.fontWeight = "bold";
+        document.getElementById("lang-en").style.fontWeight = "normal";
+      } else {
+        document.getElementById("lang-es").style.fontWeight = "normal";
+        document.getElementById("lang-en").style.fontWeight = "bold";
+      }
+    }
+
+    // Establecer estado inicial del botón de idioma
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("lang-es").style.fontWeight = "bold";
+      document.getElementById("lang-en").style.fontWeight = "normal";
+    });
+  </script>
+</body>
+</html>

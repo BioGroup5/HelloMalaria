@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Área del Paciente</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pacientep.css">
+</head>
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande">
+        </a>
+      </div>
+      <input type="checkbox" id="menu">
+      <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" data-i18n="nav-inicio" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" data-i18n="nav-sobrenosotros" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" data-i18n="nav-contacto" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" data-i18n="nav-tienda" id="nav-tienda">Recursos</a></li>
+          <li><a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+            <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+          </a></li>
+          <li><a href="login.html" class="btn-login" data-i18n="nav-login" id="nav-login">Inicio de sesión / Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="paciente-section container">
+    <h2 data-i18n="bienvenida">Bienvenida, Aarav Sharma</h2>
+
+    <div class="diagnostico-box">
+      <h3 data-i18n="titulo-diagnostico">Resultados del diagnóstico de malaria</h3>
+      <p><strong>ID:</strong> PT-DL-030001</p>
+      <p><strong data-i18n="label-fecha">Fecha:</strong> <span data-i18n="fecha">23/04/2025</span></p>
+      <p><strong data-i18n="label-hora">Hora:</strong> <span data-i18n="hora">08:12 AM</span></p>
+      <p><strong data-i18n="label-estado">Estado:</strong> <span style="color:red;"><strong data-i18n="estado">Positivo</strong></span></p>
+      <p><strong data-i18n="label-datos">Datos personales:</strong> <span data-i18n="datos">Aarav Sharma, 34 años, India</span></p>
+    </div>
+
+    <div class="acciones-links">
+      <h3 data-i18n="accesos-rapidos">Accesos rápidos</h3>
+      <div class="icon-row">
+        <!-- las imágenes e iconos se mantienen, solo los títulos traducibles -->
+      </div>
+    </div>
+  </section>
+
+  <section id="informacion-positivos" class="bloque-visual">
+    <h3>
+      <img src="images/salud.jpg" alt="Icono salud" class="titulo-icono">
+      <span data-i18n="titulo-positivos">¿Qué hacer si has dado positivo?</span>
+    </h3>
+    <ul data-i18n-list="positivos">
+      <li>Usa mascarilla si vas a estar en contacto con otras personas.</li>
+      <li>Evita zonas con mosquitos y mantente en espacios protegidos.</li>
+      <li>Sigue el tratamiento antipalúdico indicado por el personal médico.</li>
+      <li>Permanece hidratado y descansa adecuadamente.</li>
+    </ul>
+    <p data-i18n="texto-doc">Puedes consultar más información y recomendaciones oficiales en el siguiente documento:</p>
+    <a href="images/Instrucciones_Positivo_Malaria.pdf" target="_blank" class="pdf-button" data-i18n="ver-indicaciones">Ver indicaciones para pacientes positivos</a>
+  </section>
+
+  <section id="recordatorio-cita" class="bloque-visual">
+    <h3>
+      <img src="images/citaPrevia.jpg" alt="Icono Cita" class="titulo-icono">
+      <span data-i18n="titulo-recordatorio">Recordatorio importante</span>
+    </h3>
+    <p data-i18n="texto-recordatorio">No olvides solicitar tu cita médica de seguimiento lo antes posible para iniciar el tratamiento y realizar controles.</p>
+  </section>
+
+  <!-- Resto de secciones similares con data-i18n o data-i18n-list -->
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p><strong data-i18n="footer-contacto">Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p><strong data-i18n="footer-ubicacion">Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p><strong data-i18n="footer-copy">© 2025 Saluvia. Todos los derechos reservados.</strong></p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank" data-i18n="rrss-twitter">Twitter</a>
+        <a href="https://facebook.com" target="_blank" data-i18n="rrss-facebook">Facebook</a>
+        <a href="https://instagram.com" target="_blank" data-i18n="rrss-instagram">Instagram</a>
+        <a href="https://linkedin.com" target="_blank" data-i18n="rrss-linkedin">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let idioma = 'es';
+    const texto = {
+      es: {
+        'nav-inicio':'Inicio',
+        'nav-sobrenosotros':'Sobre nosotros',
+        'nav-contacto':'Plataforma',
+        'nav-tienda':'Recursos',
+        'nav-login':'Inicio de sesión / Registro',
+        'bienvenida':'Bienvenida, Aarav Sharma',
+        'titulo-diagnostico':'Resultados del diagnóstico de malaria',
+        'label-fecha':'Fecha:',
+        'fecha':'23/04/2025',
+        'label-hora':'Hora:',
+        'hora':'08:12 AM',
+        'label-estado':'Estado:',
+        'estado':'Positivo',
+        'label-datos':'Datos personales:',
+        'datos':'Aarav Sharma, 34 años, India',
+        'accesos-rapidos':'Accesos rápidos',
+        'titulo-positivos':'¿Qué hacer si has dado positivo?',
+        'texto-doc':'Puedes consultar más información y recomendaciones oficiales en el siguiente documento:',
+        'ver-indicaciones':'Ver indicaciones para pacientes positivos',
+        'titulo-recordatorio':'Recordatorio importante',
+        'texto-recordatorio':'No olvides solicitar tu cita médica de seguimiento lo antes posible para iniciar el tratamiento y realizar controles.',
+        'footer-contacto':'Contacto:',
+        'footer-ubicacion':'Ubicación:',
+        'footer-copy':'© 2025 Saluvia. Todos los derechos reservados.',
+        'rrss-twitter':'Twitter',
+        'rrss-facebook':'Facebook',
+        'rrss-instagram':'Instagram',
+        'rrss-linkedin':'LinkedIn'
+      },
+      en: {
+        'nav-inicio':'Home',
+        'nav-sobrenosotros':'About us',
+        'nav-contacto':'Platform',
+        'nav-tienda':'Resources',
+        'nav-login':'Login / Register',
+        'bienvenida':'Welcome, Aarav Sharma',
+        'titulo-diagnostico':'Malaria Diagnosis Results',
+        'label-fecha':'Date:',
+        'fecha':'04/23/2025',
+        'label-hora':'Time:',
+        'hora':'08:12 AM',
+        'label-estado':'Status:',
+        'estado':'Positive',
+        'label-datos':'Personal info:',
+        'datos':'Aarav Sharma, 34 years old, India',
+        'accesos-rapidos':'Quick Access',
+        'titulo-positivos':'What to Do if You’ve Tested Positive?',
+        'texto-doc':'You can consult official guidelines in the following document:',
+        'ver-indicaciones':'View Guidelines for Positive Patients',
+        'titulo-recordatorio':'Important Reminder',
+        'texto-recordatorio':'Don’t forget to schedule your follow-up appointment as soon as possible to start treatment and receive checkups.',
+        'footer-contacto':'Contact:',
+        'footer-ubicacion':'Location:',
+        'footer-copy':'© 2025 Saluvia. All rights reserved.',
+        'rrss-twitter':'Twitter',
+        'rrss-facebook':'Facebook',
+        'rrss-instagram':'Instagram',
+        'rrss-linkedin':'LinkedIn'
+      }
+    };
+
+    function cambiarIdioma(){
+      idioma = idioma==='es'?'en':'es';
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(texto[idioma][key]) el.innerText = texto[idioma][key];
+      });
+      document.getElementById('lang-es').style.fontWeight = idioma==='es'?'bold':'normal';
+      document.getElementById('lang-en').style.fontWeight = idioma==='en'?'bold':'normal';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Saluvia</title>
+  <link rel="stylesheet" href="Contacto.css" />
+</head>
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <!-- Logo visible y centrado en el header -->
+        <a href="Saluvia.html" class="logo-container" title="Ir a inicio - Saluvia">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande" />
+        </a>
+      </div>
+
+      <input type="checkbox" id="menu" />
+      <label for="menu">
+        <img class="menu-icono" src="images/menu-icon.jpg" alt="menu" />
+      </label>
+
+      <nav class="navbar" style="font-size: 10px;">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Contacto</a></li>
+          <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
+          <li>
+            <a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+              <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="btn-login" id="nav-login">
+              <strong>Inicio de sesión / Registro</strong>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="plataforma-container">
+    <!-- LO QUE OFRECEMOS -->
+    <section id="ofrecemos" class="bloque">
+      <img src="images/foto5.jpg" alt="Logo de la aplicación Saluvia" style="max-width:200px; display:block; margin: 0 auto 15px auto;">
+      <h2 id="ofrecemos-titulo">¿Qué ofrece Saluvia?</h2>
+      <p id="ofrecemos-texto">
+        Saluvia es la solución digital más avanzada para el diagnóstico temprano y fiable de la malaria, diseñada específicamente para funcionar en entornos con recursos limitados.
+      </p>
+      <ul>
+        <li id="item-ia"><em>Diagnóstico asistido por IA:</em> utiliza algoritmos de inteligencia artificial para analizar imágenes y detectar la malaria con alta precisión.</li>
+        <li id="item-multiplataforma"><em>Acceso multiplataforma:</em> disponible desde móviles, tablets y ordenadores para facilitar el uso en campo y en clínicas.</li>
+        <li id="item-seguimiento"><em>Seguimiento en tiempo real:</em> monitoriza la evolución de los pacientes y facilita la toma de decisiones clínicas rápidas.</li>
+        <li id="item-panel"><em>Panel para profesionales de salud:</em> con datos y reportes detallados que mejoran la gestión sanitaria.</li>
+        <li id="item-optimiza"><em>Optimización de recursos:</em> reduce el tiempo y costo del diagnóstico tradicional, mejorando la eficiencia en áreas remotas.</li>
+      </ul>
+    </section>
+
+    <!-- TIENDA / SUSCRIPCIÓN -->
+    <section id="tienda" class="bloque">
+      <h2 id="tienda-titulo">Adquiere Saluvia</h2>
+      <p id="tienda-texto">
+        Descubre nuestros planes flexibles para que puedas acceder a la tecnología que revolucionará tu manera de diagnosticar y tratar la malaria.
+      </p>
+      <ul>
+        <li id="plan-basico"><strong>Plan Básico:</strong> diagnóstico estándar, seguimiento de hasta 100 pacientes, ideal para centros pequeños.</li>
+        <li id="plan-pro"><strong>Plan Pro:</strong> funcionalidades completas, sin límite de pacientes y soporte prioritario para grandes centros y organizaciones.</li>
+      </ul>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="resenas" class="bloque">
+      <h2 id="resenas-titulo">Lo que opinan nuestros usuarios</h2>
+      <blockquote>
+        “Saluvia ha transformado nuestra manera de diagnosticar la malaria en zonas rurales.” – Dra. Nyasha Mutasa, Mozambique
+      </blockquote>
+      <blockquote>
+        “Rápido, intuitivo y muy útil. Recomendado para centros de salud primaria.” – Dr. Samuel A., India
+      </blockquote>
+    </section>
+
+    <!-- DOCUMENTACIÓN TÉCNICA -->
+    <section id="documentacion" class="bloque">
+      <h2 id="documentacion-titulo">Documentación técnica</h2>
+      <p id="documentacion-texto">Accede a los documentos oficiales del producto:</p>
+      <div class="documentos">
+        <a href="docs/Declaracion_Conformidad.pdf" class="pdf-button" target="_blank" id="doc-conformidad">Declaración de conformidad</a>
+        <a href="docs/Etiqueta_Saluvia.pdf" class="pdf-button" target="_blank" id="doc-etiqueta">Etiqueta del producto</a>
+        <a href="docs/Instrucciones_Saluvia.pdf" class="pdf-button" target="_blank" id="doc-instrucciones">Instrucciones de uso</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="ventana-contacto">
+    <div class="contact-container">
+      <h1 id="contacto-titulo">
+        Para mayor información <span id="contacto-subtitulo">contacta con nosotros</span>
+      </h1>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="nombre" id="label-nombre">Nombre </label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="form-group">
+          <label for="apellidos" id="label-apellidos">Apellidos </label>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empresa" id="label-empresa">Nombre de la empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Empresa (opcional)" />
+        </div>
+
+        <div class="form-group">
+          <label for="email" id="label-email">Email</label>
+          <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefono" id="label-telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej. +34 600 000 000" required />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje" id="label-mensaje">¿Tienes alguna pregunta?</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="5"
+            placeholder="Escribe aquí tu consulta..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="boton-enviar">Enviar mensaje</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p><strong id="footer-contacto">Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let idioma = "es";
+
+    const textos = {
+      es: {
+        "nav-inicio": "Inicio",
+        "nav-sobrenosotros": "Sobre nosotros",
+        "nav-contacto": "Contacto",
+        "nav-tienda": "Recursos",
+        "nav-login": "Inicio de sesión / Registro",
+
+        "ofrecemos-titulo": "¿Qué ofrece Saluvia?",
+        "ofrecemos-texto": "Saluvia es la solución digital más avanzada para el diagnóstico temprano y fiable de la malaria, diseñada específicamente para funcionar en entornos con recursos limitados.",
+        "item-ia": "Diagnóstico asistido por IA: utiliza algoritmos de inteligencia artificial para analizar imágenes y detectar la malaria con alta precisión.",
+        "item-multiplataforma": "Acceso multiplataforma: disponible desde móviles, tablets y ordenadores para facilitar el uso en campo y en clínicas.",
+        "item-seguimiento": "Seguimiento en tiempo real: monitoriza la evolución de los pacientes y facilita la toma de decisiones clínicas rápidas.",
+        "item-panel": "Panel para profesionales de salud: con datos y reportes detallados que mejoran la gestión sanitaria.",
+        "item-optimiza": "Optimización de recursos: reduce el tiempo y costo del diagnóstico tradicional, mejorando la eficiencia en áreas remotas.",
+
+        "tienda-titulo": "Adquiere Saluvia",
+        "tienda-texto": "Descubre nuestros planes flexibles para que puedas acceder a la tecnología que revolucionará tu manera de diagnosticar y tratar la malaria.",
+        "plan-basico": "Plan Básico: diagnóstico estándar, seguimiento de hasta 100 pacientes, ideal para centros pequeños.",
+        "plan-pro": "Plan Pro: funcionalidades completas, sin límite de pacientes y soporte prioritario para grandes centros y organizaciones.",
+
+        "resenas-titulo": "Lo que opinan nuestros usuarios",
+
+        "documentacion-titulo": "Documentación técnica",
+        "documentacion-texto": "Accede a los documentos oficiales del producto:",
+        "doc-conformidad": "Declaración de conformidad",
+        "doc-etiqueta": "Etiqueta del producto",
+        "doc-instrucciones": "Instrucciones de uso",
+
+        "contacto-titulo": "Para mayor información",
+        "contacto-subtitulo": "contacta con nosotros",
+        "label-nombre": "Nombre",
+        "label-apellidos": "Apellidos",
+        "label-empresa": "Nombre de la empresa",
+        "label-email": "Email",
+        "label-telefono": "Teléfono",
+        "label-mensaje": "¿Tienes alguna pregunta?",
+        "boton-enviar": "Enviar mensaje",
+        "nombre": "Tu nombre",
+        "apellidos": "Tus apellidos",
+        "empresa": "Empresa (opcional)",
+        "email": "correo@ejemplo.com",
+        "telefono": "Ej. +34 600 000 000",
+        "mensaje": "Escribe aquí tu consulta...",
+
+        "footer-contacto": "Contacto"
+      },
+      en: {
+        "nav-inicio": "Home",
+        "nav-sobrenosotros": "About us",
+        "nav-contacto": "Contact",
+        "nav-tienda": "Resources",
+        "nav-login": "Login / Register",
+
+        "ofrecemos-titulo": "What does Saluvia offer?",
+        "ofrecemos-texto": "Saluvia is the most advanced digital solution for early and reliable malaria diagnosis, designed specifically for low-resource settings.",
+        "item-ia": "AI-assisted diagnosis: uses artificial intelligence algorithms to analyze images and detect malaria with high accuracy.",
+        "item-multiplataforma": "Cross-platform access: available from phones, tablets, and computers to support use in the field and clinics.",
+        "item-seguimiento": "Real-time monitoring: tracks patient progress and helps with fast clinical decisions.",
+        "item-panel": "Health professional dashboard: includes detailed data and reports to support better health management.",
+        "item-optimiza": "Resource optimization: reduces the time and cost of traditional diagnosis, improving efficiency in remote areas.",
+
+        "tienda-titulo": "Get Saluvia",
+        "tienda-texto": "Explore our flexible plans to access the technology that will revolutionize how you diagnose and treat malaria.",
+        "plan-basico": "Basic Plan: standard diagnosis, tracking of up to 100 patients — ideal for small centers.",
+        "plan-pro": "Pro Plan: full features, unlimited patients, and priority support for large centers and organizations.",
+
+        "resenas-titulo": "What our users say",
+
+        "documentacion-titulo": "Technical documentation",
+        "documentacion-texto": "Access the official product documents:",
+        "doc-conformidad": "Declaration of Conformity",
+        "doc-etiqueta": "Product Label",
+        "doc-instrucciones": "User Instructions",
+
+        "contacto-titulo": "For more information",
+        "contacto-subtitulo": "contact us",
+        "label-nombre": "First name",
+        "label-apellidos": "Last name",
+        "label-empresa": "Company name",
+        "label-email": "Email",
+        "label-telefono": "Phone",
+        "label-mensaje": "Do you have any questions?",
+        "boton-enviar": "Send message",
+        "nombre": "Your name",
+        "apellidos": "Your surname",
+        "empresa": "Company (optional)",
+        "email": "email@example.com",
+        "telefono": "e.g. +1 234 567 890",
+        "mensaje": "Type your message here...",
+      }
+    };
+
+    function cambiarIdioma() {
+      idioma = idioma === "es" ? "en" : "es";
+
+      for (const id in textos[idioma]) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = textos[idioma][id];
+          } else {
+            el.textContent = textos[idioma][id];
+          }
+        }
+      }
+
+      // Actualiza el botón de idioma visualmente
+      const esEl = document.getElementById("lang-es");
+      const enEl = document.getElementById("lang-en");
+      if (idioma === "es") {
+        esEl.innerHTML = "<strong>ES</strong>";
+        enEl.innerHTML = "EN";
+      } else {
+        esEl.innerHTML = "ES";
+        enEl.innerHTML = "<strong>EN</strong>";
+      }
+    }
+  </script>
+</body>
+</html>

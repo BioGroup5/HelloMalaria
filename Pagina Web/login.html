@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header class="header" id="Inicio">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande">
+        </a>
+      </div>
+      <input type="checkbox" id="menu">
+      <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
+          <li><a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+            <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+          </a></li>
+          <li><a href="login.html" class="btn-login" id="nav-login">Inicio de sesión / Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <div class="login-container">
+      <h2 id="titulo-login" style="color: #f57c00;">Iniciar sesión</h2>
+      <form onsubmit="return validarLogin(event)">
+        <input type="text" id="usuario" placeholder="Usuario" autocomplete="off" required><br>
+        <br><input type="password" id="contrasena" placeholder="Contraseña" autocomplete="off" required><br>
+        <br>
+        <select id="rol">
+          <option value="paciente" id="rol-paciente">Paciente</option>
+          <option value="sanitario" id="rol-sanitario">Personal sanitario</option>
+        </select><br><br>
+        <button type="submit" id="boton-acceder">Acceder</button>
+      </form>
+      <p id="mensaje-error" style="color: red;"></p><br>
+      <p><a href="#" onclick="abrirModal()" id="texto-registro" style="color: blue;">¿No tienes cuenta? Regístrate aquí</a></p>
+      <p><a href="#" onclick="mostrarSMS()" id="texto-olvide">&#xbf;Has olvidado la contraseña?</a></p>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p><strong>Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-registro" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <h2 id="titulo-registro">Registro</h2>
+      <form onsubmit="registrarUsuario(event)">
+        <input type="text" id="nuevo-usuario" placeholder="Nuevo usuario" required><br><br>
+        <input type="password" id="nueva-contrasena" placeholder="Contraseña" required><br><br>
+        <button type="submit" id="boton-registro">Registrarse</button>
+      </form>
+      <p id="mensaje-registro" style="color: green;"></p>
+    </div>
+  </div>
+
+  <script>
+    let idioma = "es";
+
+    const textos = {
+      es: {
+        "nav-inicio": "Inicio",
+        "nav-sobrenosotros": "Sobre nosotros",
+        "nav-tienda": "Recursos",
+        "nav-contacto": "Plataforma",
+        "nav-login": "Inicio de sesión / Registro",
+        "titulo-login": "Iniciar sesión",
+        "boton-acceder": "Acceder",
+        "mensaje-error": "Usuario o contraseña incorrectos",
+        "rol-paciente": "Paciente",
+        "rol-sanitario": "Personal sanitario",
+        "texto-registro": "¿No tienes cuenta? Regístrate aquí",
+        "texto-olvide": "¿Has olvidado la contraseña?",
+        "titulo-registro": "Registro",
+        "boton-registro": "Registrarse"
+      },
+      en: {
+        "nav-inicio": "Home",
+        "nav-sobrenosotros": "About us",
+        "nav-tienda": "Resources",
+        "nav-contacto": "Platform",
+        "nav-login": "Login / Register",
+        "titulo-login": "Login",
+        "boton-acceder": "Sign in",
+        "mensaje-error": "Incorrect username or password",
+        "rol-paciente": "Patient",
+        "rol-sanitario": "Healthcare personnel",
+        "texto-registro": "Don't have an account? Sign up here",
+        "texto-olvide": "Forgot your password?",
+        "titulo-registro": "Register",
+        "boton-registro": "Sign up"
+      }
+    };
+
+    function cambiarIdioma() {
+      idioma = (idioma === "es") ? "en" : "es";
+
+      for (const id in textos[idioma]) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.textContent = textos[idioma][id];
+        }
+      }
+
+      document.getElementById("usuario").placeholder = (idioma === "es") ? "Usuario" : "Username";
+      document.getElementById("contrasena").placeholder = (idioma === "es") ? "Contraseña" : "Password";
+      document.getElementById("nuevo-usuario").placeholder = (idioma === "es") ? "Nuevo usuario" : "New username";
+      document.getElementById("nueva-contrasena").placeholder = (idioma === "es") ? "Contraseña" : "Password";
+
+      document.getElementById("lang-es").innerHTML = idioma === "es" ? "<strong>ES</strong>" : "ES";
+      document.getElementById("lang-en").innerHTML = idioma === "en" ? "<strong>EN</strong>" : "EN";
+    }
+
+    function mostrarSMS() {
+      alert(idioma === "es" ? "En unos segundos recibirás un SMS" : "You will receive an SMS shortly");
+    }
+
+    function validarLogin(event) {
+      event.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const contrasena = document.getElementById('contrasena').value;
+      const rol = document.getElementById('rol').value;
+
+      if (usuario === 'saluvia' && contrasena === '1234') {
+        sessionStorage.setItem('logueado', 'true');
+        window.location.href = (rol === 'sanitario') ? 'sanitario.html' : 'paciente.html';
+      } else if (usuario === 'saluviap' && contrasena === '1234') {
+        sessionStorage.setItem('logueado', 'true');
+        if (rol === 'paciente') {
+          window.location.href = 'pacientep.html';
+        }
+      } else {
+        document.getElementById('mensaje-error').textContent = textos[idioma]['mensaje-error'];
+      }
+    }
+
+    function abrirModal() {
+      document.getElementById("modal-registro").style.display = "block";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal-registro").style.display = "none";
+      document.getElementById("mensaje-registro").textContent = "";
+    }
+
+    function registrarUsuario(event) {
+      event.preventDefault();
+      const nuevoUsuario = document.getElementById("nuevo-usuario").value;
+      document.getElementById("mensaje-registro").textContent =
+        (idioma === "es" ? "Registro exitoso para " : "Successfully registered: ") + nuevoUsuario;
+
+      document.getElementById("nuevo-usuario").value = "";
+      document.getElementById("nueva-contrasena").value = "";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal-registro");
+      if (event.target === modal) {
+        cerrarModal();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+Inicio
+Sobre nosotros: Misión(start-up), equipo, casos de uso/impacto
+Plataforma: que ofrecemos, Tienda/suscripción, contato, reseñas, documentación técnica (precauciones/indicaciones, etiqeuta, instrucciones)
+Recursos: FAQ (Preguntas frecuentes) + noticias/blog, soporte tecnico
+Idioma
+Inicio de sesión/Registro
+
+
+Login sanitarios: Indicaciones
+
+- información para los positivos: en el momento que les dicen que son positivos que precauciones tienen que tomar, si tienen que llevar mascarilla o no, que tratamiento tienen que seguir...
+
+-informcion para negativos con síntomas: Una hoja infromativa diciéndole usted tiene los síntomas de la malaria y pensamos que puede ser un falso negativo, por lo que habría que repetir la prueba en x días. Precauciones que tiene que seguir... etc.
+
+- una lista de los síntomas para el medico para corroborar que la persona tiene o no tiene los síntomas, y pueda tomar distintas decisiones en base a eso.
+
+- una lista con los posibles tratamientos y el medico pueda decidir cual es el tratamiento mas oportuno según las condiciones del paciente.
+
+Login paciente:
+esto abajo:
+-botón cita previa
+-botón encuentra tu centro sanitario mas cercano
+-botón cuida tu salud (consejos): Hábitos para no contraer malaria 
+-botón carpeta de salud
+-paciente activo
+
+
+
+Paciente A (Positivo): nombre del paciente que ha iniciado sesion
+- Resultados diagnostico malaria (fecha, hora, estado, datos personales)
+- información para los positivos: en el momento que les dicen que son positivos que precauciones tienen que tomar, si tienen que llevar mascarilla o no, que tratamiento tienen que seguir...
+-Un mensaje recordatorio para pedir cita
+- una sección para pedir cita
+
+Paciente B: nombre del paciente que ha iniciado sesión
+- Resultados diagnostico malaria (fecha, hora, estado, datos personales)
+- una sección para pedir cita
+
+SOBRE NOSOTROS: al final
+Compromiso con la Salud Global
+En Saluvia, creemos que el acceso al diagnóstico oportuno no debe depender del lugar donde se viva. Por eso, colaboramos con organizaciones internacionales y programas de salud pública para implementar nuestra solución en regiones con alta incidencia de malaria y recursos limitados.
+
+Innovación Continua
+En Saluvia, la innovación no se detiene. Nuestro equipo trabaja constantemente para mejorar la precisión del diagnóstico mediante inteligencia artificial y adaptar la app a nuevas necesidades clínicas. Estamos comprometidos con un futuro donde detectar la malaria sea más rápido, sencillo y accesible para todos los profesionales sanitarios.
+
+
+
+FAQ: 
+¿Cuánto tiempo tarda en obtenerse el resultado?
+Los resultados suelen estar disponibles en menos de un minuto desde que se sube la imagen.
+¿Necesito registrarme para usar la aplicación?
+Puedes usar la versión de prueba sin registrarte, pero se requiere una cuenta para acceder a funciones avanzadas y guardar historiales.
+
+¿Qué tipo de microscopio se necesita?
+Se recomienda un microscopio óptico estándar con cámara, aunque nuestra IA se adapta a distintos niveles de calidad de imagen.
+
+¿La aplicación puede usarse sin conexión a internet?
+Actualmente no, ya que el análisis se realiza en la nube para garantizar la máxima precisión y seguridad.
+
+¿Está aprobada por alguna entidad médica?
+La herramienta está en proceso de validación clínica y cumple con estándares éticos de desarrollo y privacidad de datos.
+  

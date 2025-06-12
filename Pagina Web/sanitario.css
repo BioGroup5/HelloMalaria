@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.footer {
+  background-color: #f0f0f0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-image: url(images/foto.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 15px 20px;
+  z-index: 1000;
+  border-bottom: 1px solid #f57c00;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 150px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 800;
+  color: #47e4c2;
+}
+
+.menu .navbar ul li {
+  float: left;
+}
+
+.menu .navbar ul li a {
+  padding: 20px;
+  display: block;
+  color: #2e2e2e;
+  font-size: 18px;
+}
+
+.menu .navbar ul li a:hover {
+  color: #f57c00;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+  display: none;
+}
+
+.header-info h1 {
+  font-size: 60px;
+  color: #f57c00;
+  margin-bottom: 10px;
+}
+
+.header-info p {
+  font-size: 10px;
+  color: #f57c00;
+  margin-bottom: 30px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f8f8f8;
+  text-align: center;
+  gap: 1.5rem;
+  color: #333;
+  border-top: 1px solid #f57c00;
+}
+
+.links ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.links ul li {
+  margin: 0 15px;
+}
+
+.links ul li a {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.links ul li a:hover {
+  color: #f57c00;
+}
+
+@media (max-width: 768px) {
+  .menu label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0a1a2f;
+    display: none;
+    flex-direction: column;
+  }
+
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+
+  .menu .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-info h1 {
+    font-size: 40px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #buscador-pacientes input {
+    width: 90%;
+  }
+
+  #buscador-pacientes button {
+    width: 90%;
+  }
+  
+  .info-extra {
+    padding: 40px 60px;
+  }
+
+  .info-extra h2 {
+    font-size: 20px;
+  }
+
+  .info-extra h3 {
+    font-size: 18px;
+  }
+
+  .info-extra p,
+  .info-extra ul.checklist li {
+    font-size: 15px;
+  }
+
+  .pdf-button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+.logo-img-footer {
+  height: 80px;
+  margin-left: 20px;
+  width: auto; /* mantiene la proporción original */
+}
+.logo-img-MU {
+  height: 50px;
+  margin-left: 20px;
+}
+
+h1 {
+  font-size: 14px;
+  background-color: #f0f0f0;
+  font-weight: normal;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: #0a1a2f;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-login:hover {
+  background-color: #fff;
+  border-color: #34b29d;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* === ESTILOS PARA EL BUSCADOR DE PACIENTES === */
+#buscador-pacientes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#buscador-pacientes input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#buscador-pacientes button {
+  padding: 10px 20px;
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#buscador-pacientes .nota {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.Buscador{
+  margin-top: 100px;	
+  background-color: #f0f0f0;
+}
+
+/* === SECCIÓN: INFORMACIÓN ADICIONAL === */
+.info-extra {
+  background-color: #f0f0f0;
+  border-top: 2px solid #f57c00;
+  padding: 40px 200px;
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #2e2e2e;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 60px;
+}
+
+.info-extra h2 {
+  color: #f57c00;
+  font-size: 24px;
+  margin-top: 90px;
+  margin-bottom: 60px;
+}
+
+.info-extra h3 {
+  color: #34b29d;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+
+.info-extra p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.info-extra ul.checklist {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.info-extra ul.checklist li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.pdf-button {
+  background: #f57c00;
+  color: #fff;
+  border: 2px solid #e65100; /* borde un poco más oscuro que el fondo */
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px; /* menos redondeado, más formal */
+  cursor: pointer;
+  margin: 10px 0 20px 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: none; /* sin sombras para menos distracción */
+}
+
+.pdf-button:hover {
+  background: #e65100; /* un tono más oscuro */
+  border-color: #bf360c;
+}
+
+.pdf-button:active {
+  background: #bf360c; /* aún más oscuro al presionar */
+  border-color: #9a2c07;
+}
+
+.pdf-button:disabled {
+  background: #fbdcb4;  /* fondo claro anaranjado pálido */
+  color: #a16a00;
+  border: 2px solid #f9c27c;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+  transform: none;
+  transition: none;
+}
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.redes-sociales a {
+  color: #2c3e50; /* Gris oscuro profesional */
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.redes-sociales a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #e67e22;
+  transition: width 0.3s;
+}
+
+.redes-sociales a:hover {
+  color: #e67e22;
+}
+
+.redes-sociales a:hover::after {
+  width: 100%;
+}
+
+.info-footer p {
+  margin: 0.2rem 0;
+  font-size: 14px;
+}

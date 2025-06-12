@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursos - Saluvia</title>
+  <link rel="stylesheet" href="Recursos.css">
+</head>
+<body>
+  <header class="header">
+    <div class="menu container-full">
+      <div class="logo-group">
+        <a href="Saluvia.html" class="logo-container">
+          <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img logo-grande">
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
+          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Recursos.html" id="nav-recursos" class="active">Recursos</a></li>
+          <li>
+            <a href="#" id="nav-idioma" onclick="cambiarIdioma()">
+              <span id="lang-es"><strong>ES</strong></span> / <span id="lang-en">EN</span>
+            </a>
+          </li>
+		  <li><a href="login.html" id="nav-login" class="btn-login">Inicio de sesión / Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container recursos-section">
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 id="faq-titulo">Preguntas frecuentes</h2>
+      <div class="faq-item">
+        <h3 id="preg1">¿Qué necesito para usar la aplicación de diagnóstico?</h3>
+        <p id="resp1">Solo necesitas una imagen clara de una muestra de sangre tomada con un microscopio y conexión a internet para subirla.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg2">¿La herramienta es gratuita?</h3>
+        <p id="resp2">Ofrecemos una versión gratuita para pruebas limitadas y planes avanzados para uso institucional.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg3">¿Qué tan precisos son los resultados?</h3>
+        <p id="resp3">Nuestra IA ha sido entrenada con miles de imágenes y ofrece una precisión comparable a la de técnicos expertos.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg4">¿Cuánto tiempo tarda en obtenerse el resultado?</h3>
+        <p id="resp4">Los resultados suelen estar disponibles en menos de un minuto desde que se sube la imagen.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg5">¿Necesito registrarme para usar la aplicación?</h3>
+        <p id="resp5">Puedes usar la versión de prueba sin registrarte, pero se requiere una cuenta para acceder a funciones avanzadas y guardar historiales.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg6">¿Qué tipo de microscopio se necesita?</h3>
+        <p id="resp6">Se recomienda un microscopio óptico estándar con cámara, aunque nuestra IA se adapta a distintos niveles de calidad de imagen.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg7">¿La aplicación puede usarse sin conexión a internet?</h3>
+        <p id="resp7">Actualmente no, ya que el análisis se realiza en la nube para garantizar la máxima precisión y seguridad.</p>
+      </div>
+      <div class="faq-item">
+        <h3 id="preg8">¿Está aprobada por alguna entidad médica?</h3>
+        <p id="resp8">La herramienta está en proceso de validación clínica y cumple con estándares éticos de desarrollo y privacidad de datos.</p>
+      </div>
+    </section>
+
+    <!-- Noticias / Blog -->
+    <section id="blog">
+      <h2 id="blog-titulo">Noticias y blog</h2>
+      <article class="blog-post">
+        <h3 id="post1-titulo">Lanzamiento oficial de MalarIA</h3>
+        <p id="post1-texto">El 1 de julio lanzamos la primera versión pública de MalarIA en comunidades rurales de la India. ¡Gracias a todos por su apoyo!</p>
+      </article>
+      <article class="blog-post">
+        <h3 id="post2-titulo">¿Por qué es vital el diagnóstico temprano de la malaria?</h3>
+        <p id="post2-texto">La malaria es una enfermedad que puede tratarse fácilmente si se detecta a tiempo. Nuestra herramienta busca facilitar ese acceso.</p>
+      </article>
+    </section>
+
+    <!-- Soporte Técnico -->
+    <section id="soporte">
+      <div class="soporte-container">
+        <h2 id="soporte-titulo">Soporte técnico</h2>
+        <p id="soporte-texto">¿Tienes algún problema o necesitas ayuda técnica? Estamos aquí para apoyarte.</p>
+        <ul>
+          <li id="soporte-email">📧 Email: soportesaluvia@gmail.com</li>
+          <li id="soporte-tlf">📞 Teléfono: +34 600 123 456</li>
+          <li id="soporte-chat">💬 Chat en vivo disponible de 9:00 a 17:00 (hora local)</li>
+        </ul>
+        <a href="Contacto.html" id="soporte-boton" class="btn-1">Contactar Soporte</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <div class="logo-group">
+      <img src="images/logo.jpg" alt="Logo SALUVIA" class="logo-img-footer">
+      <img src="images/logo_mu.jpg" alt="Logo MU" class="logo-img-MU">
+    </div>
+    <div class="info-footer">
+      <p id="footer-contacto"><strong>Contacto:</strong> saluvia@gmail.com | +34 912 345 678</p>
+      <p id="footer-ubicacion"><strong>Ubicación:</strong> Loramendi kalea 4, Arrasate</p>
+      <p id="footer-copy"><strong>&copy; 2025 Saluvia.</strong> Todos los derechos reservados.</p>
+      <div class="redes-sociales">
+        <a href="https://twitter.com" target="_blank" id="footer-twitter">Twitter</a>
+        <a href="https://facebook.com" target="_blank" id="footer-facebook">Facebook</a>
+        <a href="https://instagram.com" target="_blank" id="footer-instagram">Instagram</a>
+        <a href="https://linkedin.com" target="_blank" id="footer-linkedin">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let idioma = "es";
+    const textos = {
+      es: {
+        "nav-inicio": "Inicio",
+        "nav-sobrenosotros": "Sobre nosotros",
+        "nav-contacto": "Plataforma",
+        "nav-recursos": "Recursos",
+        "nav-login": "Inicio de sesión / Registro",
+        "lang-es": "<strong>ES</strong>",
+        "lang-en": "EN",
+        "faq-titulo": "Preguntas frecuentes",
+        "preg1": "¿Qué necesito para usar la aplicación de diagnóstico?",
+        "resp1": "Solo necesitas una imagen clara de una muestra de sangre tomada con un microscopio y conexión a internet para subirla.",
+        "preg2": "¿La herramienta es gratuita?",
+        "resp2": "Ofrecemos una versión gratuita para pruebas limitadas y planes avanzados para uso institucional.",
+        "preg3": "¿Qué tan precisos son los resultados?",
+        "resp3": "Nuestra IA ha sido entrenada con miles de imágenes y ofrece una precisión comparable a la de técnicos expertos.",
+        "preg4": "¿Cuánto tiempo tarda en obtenerse el resultado?",
+        "resp4": "Los resultados suelen estar disponibles en menos de un minuto desde que se sube la imagen.",
+        "preg5": "¿Necesito registrarme para usar la aplicación?",
+        "resp5": "Puedes usar la versión de prueba sin registrarte, pero se requiere una cuenta para acceder a funciones avanzadas y guardar historiales.",
+        "preg6": "¿Qué tipo de microscopio se necesita?",
+        "resp6": "Se recomienda un microscopio óptico estándar con cámara, aunque nuestra IA se adapta a distintos niveles de calidad de imagen.",
+        "preg7": "¿La aplicación puede usarse sin conexión a internet?",
+        "resp7": "Actualmente no, ya que el análisis se realiza en la nube para garantizar la máxima precisión y seguridad.",
+        "preg8": "¿Está aprobada por alguna entidad médica?",
+        "resp8": "La herramienta está en proceso de validación clínica y cumple con estándares éticos de desarrollo y privacidad de datos.",
+        "blog-titulo": "Noticias y blog",
+        "post1-titulo": "Lanzamiento oficial de MalarIA",
+        "post1-texto": "El 1 de julio lanzamos la primera versión pública de MalarIA en comunidades rurales de la India. ¡Gracias a todos por su apoyo!",
+        "post2-titulo": "¿Por qué es vital el diagnóstico temprano de la malaria?",
+        "post2-texto": "La malaria es una enfermedad que puede tratarse fácilmente si se detecta a tiempo. Nuestra herramienta busca facilitar ese acceso.",
+        "soporte-titulo": "Soporte técnico",
+        "soporte-texto": "¿Tienes algún problema o necesitas ayuda técnica? Estamos aquí para apoyarte.",
+        "soporte-email": "📧 Email: soportesaluvia@gmail.com",
+        "soporte-tlf": "📞 Teléfono: +34 600 123 456",
+        "soporte-chat": "💬 Chat en vivo disponible de 9:00 a 17:00 (hora local)",
+        "soporte-boton": "Contactar Soporte",
+        "footer-contacto": "Contacto: saluvia@gmail.com | +34 912 345 678",
+        "footer-ubicacion": "Ubicación: Loramendi kalea 4, Arrasate",
+        "footer-copy": "© 2025 Saluvia. Todos los derechos reservados.",
+        "footer-twitter": "Twitter",
+        "footer-facebook": "Facebook",
+        "footer-instagram": "Instagram",
+        "footer-linkedin": "LinkedIn",
+      },
+      en: {
+        "nav-inicio": "Home",
+        "nav-sobrenosotros": "About us",
+        "nav-contacto": "Platform",
+        "nav-recursos": "Resources",
+        "nav-login": "Login / Register",
+        "lang-es": "ES",
+        "lang-en": "<strong>EN</strong>",
+        "faq-titulo": "Frequently Asked Questions",
+        "preg1": "What do I need to use the diagnostic application?",
+        "resp1": "You only need a clear image of a blood sample taken with a microscope and an internet connection to upload it.",
+        "preg2": "Is the tool free?",
+        "resp2": "We offer a free version with limited tests and advanced plans for institutional use.",
+        "preg3": "How accurate are the results?",
+        "resp3": "Our AI has been trained with thousands of images and delivers accuracy comparable to expert technicians.",
+        "preg4": "How long does it take to get the results?",
+        "resp4": "Results are usually available in under one minute after uploading the image.",
+        "preg5": "Do I have to register to use the app?",
+        "resp5": "You can use the trial version without registering, but an account is required for advanced features and saving history.",
+        "preg6": "What type of microscope is required?",
+        "resp6": "A standard optical microscope with a camera is recommended, although our AI adapts to various image quality levels.",
+        "preg7": "Can the app be used offline?",
+        "resp7": "Not currently, as analysis is performed in the cloud to ensure maximum accuracy and security.",
+        "preg8": "Is it approved by any medical entity?",
+        "resp8": "The tool is undergoing clinical validation and meets ethical standards for development and data privacy.",
+        "blog-titulo": "News & Blog",
+        "post1-titulo": "Official Launch of MalarIA",
+        "post1-texto": "On July 1 we launched the first public version of MalarIA in rural communities in India. Thank you all for your support!",
+        "post2-titulo": "Why is early malaria diagnosis vital?",
+        "post2-texto": "Malaria can be easily treated if detected early. Our tool aims to facilitate that access.",
+        "soporte-titulo": "Technical Support",
+        "soporte-texto": "Having issues or need technical assistance? We’re here to support you.",
+        "soporte-email": "📧 Email: suportsaluvia@gmail.com",
+        "soporte-tlf": "📞 Phone: +34 600 123 456",
+        "soporte-chat": "💬 Live chat available from 9:00 AM to 5:00 PM (local time)",
+        "soporte-boton": "Contact Support",
+        "footer-contacto": "Contact: saluvia@gmail.com | +34 912 345 678",
+        "footer-ubicacion": "Location: Loramendi kalea 4, Arrasate",
+        "footer-copy": "© 2025 Saluvia. All rights reserved.",
+        "footer-twitter": "Twitter",
+        "footer-facebook": "Facebook",
+        "footer-instagram": "Instagram",
+        "footer-linkedin": "LinkedIn",
+      }
+    };
+
+    function cambiarIdioma() {
+      idioma = idioma === "es" ? "en" : "es";
+      for (const id in textos[idioma]) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (el.placeholder !== undefined) {
+            el.placeholder = textos[idioma][id];
+          } else {
+            el.innerHTML = textos[idioma][id];
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

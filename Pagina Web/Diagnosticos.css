@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f9f9f9;
+	margin: 20px;
+}
+
+h2 {
+	color: #f57c00;  
+	text-align: left;
+}
+
+/* Contenedor con scroll si la tabla es muy ancha */
+.table-container {
+	width: 100%;
+	overflow-x: auto;
+}
+
+/* Estilo de la tabla */
+table {
+	width: 100%;
+	min-width: 1200px;
+	border-collapse: collapse;
+	margin: 50px auto 100px auto;
+	font-size: 0.9em;
+}
+
+th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+th {
+	background-color: #ffe0b2;  
+	color: #f57c00;           
+}
+
+.positivo {
+	background-color: #ffcdd2;
+	font-weight: bold;
+	text-align: center;
+	color: #d32f2f;
+}
+
+.negativo {
+	background-color: #c8e6c9;
+	font-weight: bold;
+	text-align: center;
+	color: #2e7d32;
+}
+
+.datos {
+	font-size: 0.95em;
+	color: black;
+}
+
+.datos-positivo {
+	background-color: #ffcdd2;
+	color: black;
+}

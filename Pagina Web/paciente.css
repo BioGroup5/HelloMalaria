@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 15px 20px;
+  z-index: 1000;
+  border-bottom: 1px solid #f57c00;
+
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 150px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 800;
+  color: #47e4c2;
+}
+
+.menu .navbar ul li {
+  float: left;
+}
+
+.menu .navbar ul li a {
+  padding: 20px;
+  display: block;
+  color: #2e2e2e;
+  font-size: 18px;
+}
+
+.menu .navbar ul li a:hover {
+  color: #f57c00;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+  display: none;
+}
+
+.header-info h1 {
+  font-size: 60px;
+  color: #f57c00;
+  margin-bottom: 30px;
+}
+
+.header-info p {
+  font-size: 20px;
+  color: #f57c00;
+  margin-bottom: 30px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f8f8f8;
+  text-align: center;
+  gap: 1.5rem;
+  color: #333;
+  border-top: 1px solid #f57c00;
+}
+
+.logo-img-footer {
+  height: 80px;
+  margin-left: 20px;
+  width: auto; /* mantiene la proporción original */
+}
+
+.links ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.links ul li {
+  margin: 0 15px;
+}
+
+.links ul li a {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.links ul li a:hover {
+  color: #f57c00;
+}
+
+@media (max-width: 768px) {
+  .menu label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0a1a2f;
+    display: none;
+    flex-direction: column;
+  }
+
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+
+  .menu .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-info h1 {
+    font-size: 40px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img-MU {
+  height: 50px;
+  margin-left: 20px;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: #0a1a2f;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-login:hover {
+  background-color: #fff;
+  border-color: #34b29d;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.paciente-section {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  color: #333;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.paciente-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #f57c00;
+}
+
+.diagnostico-box, .cita-box {
+  background-color: #fafafa;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-left: 6px solid #34b29d;
+  border-radius: 8px;
+}
+
+.diagnostico-box h3, .cita-box h3 {
+  font-size: 22px;
+  color: #0a1a2f;
+  margin-bottom: 10px;
+}
+
+.acciones-links h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0a1a2f;
+}
+
+.acciones-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.acciones-links ul li {
+  margin-bottom: 10px;
+}
+
+.acciones-links a {
+  color: #34b29d;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.acciones-links a:hover {
+  color: #f57c00;
+  text-decoration: underline;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.icon-link {
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+}
+
+.icon-link img {
+  width: 40px;   
+  height: auto;  
+  display: block; 
+}
+.bloque-visual {
+  background-color: #fff;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 900px;
+  color: #333;
+}
+
+.bloque-visual h3 {
+  font-size: 24px;
+  color: #f57c00;
+  margin-bottom: 10px;
+}
+
+.bloque-visual p, .bloque-visual li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.mapa-contenedor {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mapa-imagen {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.form-cita {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-cita label {
+  font-weight: bold;
+}
+html, body {
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+.form-cita input, .form-cita select, .form-cita button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  transition: none;
+}
+input[type="date"] {
+  min-height: 40px;
+}
+
+.form-cita button {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  cursor: not-allowed;
+}
+.titulo-icono {
+  width: 30px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.redes-sociales a {
+  color: #2c3e50; /* Gris oscuro profesional */
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.redes-sociales a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #e67e22;
+  transition: width 0.3s;
+}
+
+.redes-sociales a:hover {
+  color: #e67e22;
+}
+
+.redes-sociales a:hover::after {
+  width: 100%;
+}
+
+.info-footer p {
+  margin: 0.2rem 0;
+  font-size: 14px;
+}

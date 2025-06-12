@@ -1,0 +1,67 @@
+Indicaciones para pacientes con resultado positivo:
+Este documento debe ser entregado al paciente en el momento en que se confirma un diagnóstico positivo de malaria. Incluye indicaciones clave sobre aislamiento, uso de mascarilla, inicio del tratamiento y recomendaciones generales durante el proceso de recuperación.
+botón con pdf que se abrirá en el mismo html
+
+Indicaciones para pacientes con síntomas de malaria pero resultado negativo:
+Este documento informa al paciente de que, aunque su prueba ha resultado negativa, presenta síntomas compatibles con malaria. Podría tratarse de un falso negativo. Se recomienda repetir la prueba en unos días y seguir ciertas precauciones.
+botón con pdf2 que se abrirá en el mismo html
+
+
+
+Lista de comprobación clínica (Check-list):
+
+☐ Fiebre ≥ 38°C
+
+☐ Escalofríos / sudoración
+
+☐ Cefalea
+
+☐ Dolor muscular o articular
+
+☐ Náuseas o vómitos
+
+☐ Diarrea
+
+☐ Fatiga extrema
+
+☐ Palidez mucocutánea
+
+☐ Hepatoesplenomegalia (a la palpación)
+
+☐ Alteración del nivel de conciencia
+
+
+Información dirigida al personal sanitario:
+La malaria es una enfermedad heterogénea cuyo manejo exige una clasificación precisa del agente causal y un conocimiento actualizado de las características clínicas, epidemiológicas y farmacológicas de cada especie. La correcta identificación del Plasmodium permite orientar la prevención, seleccionar la quimioprofilaxis adecuada y aplicar el tratamiento más efectivo, disminuyendo la morbilidad y mortalidad asociadas.
+
+El personal sanitario debe estar familiarizado con las diferentes presentaciones clínicas y terapéuticas, así como con los avances en vacunación para contribuir eficazmente a la lucha contra la malaria.
+
+
+
+
+Clasificación según la especie de Plasmodium
+Actualmente se reconocen cinco especies principales que afectan a humanos.
+Plasmodium falciparum es la especie más peligrosa responsable de la mayoría de los casos de malaria grave y mortal clínicamente puede desencadenar complicaciones severas como malaria cerebral anemia intensa y fallo multiorgánico geográficamente predomina en África subsahariana y también está presente en áreas tropicales de Asia y América los individuos con anemia falciforme en heterocigosis poseen resistencia natural frente a esta especie no genera hipnozoitos por lo que no produce recaídas.
+Plasmodium vivax produce una forma de malaria más leve pero con capacidad para provocar recaídas debido a la formación de hipnozoitos latentes en el hígado es común en Asia América Latina y algunas regiones africanas pero poco frecuente en África subsahariana debido a la ausencia del antígeno Duffy en gran parte de la población requerido para la infección por este parásito.
+Plasmodium ovale similar clínicamente a P vivax también puede producir recaídas por hipnozoitos hepáticos aunque con síntomas generalmente más leves se encuentra en África Occidental y algunas regiones del Pacífico a diferencia de P vivax puede infectar a individuos sin el antígeno Duffy favoreciendo su presencia en comunidades africanas.
+Plasmodium malariae causa una forma más benigna y crónica de malaria con ciclos febriles cada 72 horas y persistencia prolongada en el organismo si no se trata se encuentra de forma dispersa en África Asia y América no produce hipnozoitos ni resistencia genética significativa.
+Plasmodium knowlesi es un parásito zoonótico originario de monos que actualmente infecta a humanos principalmente en el sudeste asiático especialmente Malasia y Borneo su ciclo de reproducción es rápido 24 horas lo que puede conducir a un deterioro clínico acelerado similar al de P falciparum los humanos carecen de inmunidad natural contra esta especie.
+Las infecciones mixtas con más de una especie de Plasmodium son poco frecuentes pero posibles además existen otras especies y subespecies que pueden afectar al ser humano en situaciones específicas.
+
+Prevención quimioprofilaxis y vacunación
+La prevención es fundamental para controlar la malaria especialmente en poblaciones vulnerables y zonas de alta transmisión la quimioprofilaxis consiste en la administración de medicamentos antipalúdicos para prevenir el desarrollo de la infección o enfermedad durante períodos de riesgo independientemente de la presencia o no de infección activa.
+
+Los medicamentos profilácticos más utilizados incluyen Atovacuona e Hidrocloruro de proguanil Malarone indicado para prevención y tratamiento de malaria no complicada por P falciparum especialmente en zonas con resistencia a cloroquina actúa bloqueando el metabolismo y reproducción del parásito puede producir efectos adversos como cefalea náuseas vómitos mareos y reacciones alérgicas.
+Doxiciclina es un antibiótico del grupo de las tetraciclinas utilizado en zonas con P falciparum resistente a cloroquina además de su acción antipalúdica protege contra otras infecciones bacterianas y puede causar náuseas vómitos diarrea y reacciones cutáneas.
+Primaquina y Tafenoquina son esenciales para eliminar hipnozoitos hepáticos y prevenir recaídas de P vivax y P ovale la tafenoquina presenta una vida más larga permitiendo una dosificación única para profilaxis prolongada pueden ocasionar reacciones hemolíticas problemas gastrointestinales y alergias.
+Cloroquina tradicionalmente usada para prevención y tratamiento de malaria por especies no resistentes tiene un uso limitado en zonas con resistencia de P falciparum y puede producir efectos secundarios como cefalea erupciones cutáneas prurito y alteraciones gastrointestinales.
+
+En cuanto a las vacunas disponibles Mosquirix RTS,S/AS01 es la primera vacuna recomendada por la OMS para prevenir malaria por P falciparum en niños entre 5 y 17 meses especialmente en África subsahariana se administra en un esquema de tres dosis con posible dosis de refuerzo reduce la mortalidad global por malaria en un 13% y la mortalidad por malaria complicada en un 30%.
+La vacuna R21 Malaria Vaccine R21/Matrix-M está desarrollada para niños de 5 a 36 meses con eficacia superior reducción del 75% de casos sintomáticos durante el primer año tras la vacunación y un costo más bajo también se administra en tres dosis más una dosis de refuerzo y está en proceso de implementación en regiones de alta transmisión ambas vacunas presentan un perfil de seguridad favorable con efectos secundarios leves y transitorios.
+
+Consideraciones para el tratamiento
+El tratamiento debe ajustarse a la especie identificada y a la gravedad clínica.
+En malaria no complicada por especies distintas de P falciparum se emplea cloroquina oral con alternativas como quinina o pirimetamina-sulfadiazina cuando hay resistencia la quinina elimina el parásito pero no se usa para profilaxis.
+En malaria complicada principalmente por P falciparum se requiere tratamiento hospitalario con quinina intravenosa y en los últimos años con artemisininas que han demostrado mayor eficacia y mejor tolerancia.
+En zonas con resistencia a cloroquina se utilizan medicamentos como mefloquina que tiene uso tanto preventivo como terapéutico.
+
