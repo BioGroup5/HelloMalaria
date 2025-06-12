@@ -6,8 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="titulo-pagina">Iniciar sesión</title>
   <link rel="stylesheet" href="sanitario.css" />
+   <style>
+    body.modal-open { overflow: hidden; }
+    .modal {
+      display: block;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+    }
+    h2 { margin-top: 0; }
+    .pdf-container { width: 100%; height: 500px; margin: 10px 0; }
+    .accept-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .accept-btn:hover { background-color: #218838; }
+  </style>
+</head>
+<body class="modal-open">
+
+  <!-- POPUP OBLIGATORIO -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <h2>Términos y condiciones sobre protección de datos personales</h2>
+      <div class="pdf-container">
+        <embed src="Protección de datos.pdf"
+               type="application/pdf" width="100%" height="100%">
+      </div>
+      <button class="accept-btn" id="acceptBtn">Aceptar</button>
+    </div>
+  </div>
 </head>
 <body>
+
   <header class="header" id="Inicio">
     <div class="menu container-full">
       <div class="logo-group">
@@ -19,9 +66,9 @@
       <label for="menu"><img class="menu-icono" src="images/menu-icon.jpg" alt="menu" /></label>
       <nav class="navbar">
         <ul>
-          <li><a href="Saluvia.html" id="nav-inicio">Inicio</a></li>
+          <li><a href="index.html" id="nav-inicio">Inicio</a></li>
           <li><a href="SobreNosotros.html" id="nav-sobrenosotros">Sobre nosotros</a></li>
-          <li><a href="Contacto.html" id="nav-contacto">Plataforma</a></li>
+          <li><a href="Plataforma.html" id="nav-contacto">Plataforma</a></li>
           <li><a href="Recursos.html" id="nav-tienda">Recursos</a></li>
           <li>
             <a href="#" id="nav-idioma" onclick="cambiarIdioma()">
@@ -161,6 +208,16 @@
   </footer>
 
   <script>
+   // Popup obligatorio: aceptar para continuar
+    document.getElementById("acceptBtn").addEventListener("click", function() {
+      document.getElementById("popupModal").style.display = "none";
+      document.body.classList.remove("modal-open");
+    });
+    window.onclick = function(event) {
+      if (event.target === document.getElementById("popupModal")) {
+        alert("Debes aceptar los términos y condiciones para continuar.");
+      }
+    };
     function openModal(src) {
       document.getElementById("modalImage").src = src;
       document.getElementById("imageModal").style.display = "block";
